@@ -17,10 +17,18 @@
         <div class="loader"><img src="images/loading.gif" alt="#"></div>
         </div>
     <!-- end loader -->
+    <nav id="navbar" class="d-flex justify-content-between">
+        <h1>POTHOS</h1>
+        <ul class="nav ">
+            <li class="nav-item"><a class="nav-link" href="#">home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">about</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">shop</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">care</a></li>
+        </ul>
+    </nav>
     <header>
         <div id="bannerHome" class="container-fluid">
-            <h1>POTHOS</h1>
-            <div class="container">
+            <div class="container p-5">
                 <!-- Carousel -->
                 <div id="demo" class="carousel slide" data-bs-ride="carousel">
                     <!-- Indicators/dots -->
@@ -32,49 +40,71 @@
                     <!-- The slideshow/carousel -->
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="d-flex">
-                                <div>
-                                    <h1>You can get good plants here</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatem adipisci aperiam aliquid hic ab aut sunt quasi obcaecati nihil exercitationem inventore iusto ut magnam, consequuntur unde, temporibus accusamus distinctio.</p>
-                                </div>
-                                <img src="placeholder-gray.png"/>
-                            </div>
+                            <div class="row">
+                                    <div class="col d-flex flex-column justify-content-center">
+                                        <h1>You can get good plants here</h1>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatem adipisci aperiam aliquid hic ab aut sunt quasi obcaecati nihil exercitationem inventore iusto ut magnam, consequuntur unde, temporibus accusamus distinctio.</p>
+                                    </div>
+                                    <div class="col">
+                                        <img src="placeholder-gray.png"/>
+                                    </div>
+                              </div>
                         </div>
                         <div class="carousel-item">
-                            <div class="d-flex">
-                                <div>
+                            <div class="row">
+                                <div class="col">
                                     <h1>You can get good plants here</h1>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatem adipisci aperiam aliquid hic ab aut sunt quasi obcaecati nihil exercitationem inventore iusto ut magnam, consequuntur unde, temporibus accusamus distinctio.</p>
                                 </div>
-                                <img src="placeholder-gray.png"/>
-                            </div>                        
+                                <div class="col">
+                                    <img src="placeholder-gray.png"/>
+                                </div>
+                            </div>                       
                         </div>
                         <div class="carousel-item">
-                            <div class="d-flex">
-                                <div>
+                            <div class="row">
+                                <div class="col">
                                     <h1>You can get good plants here</h1>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatem adipisci aperiam aliquid hic ab aut sunt quasi obcaecati nihil exercitationem inventore iusto ut magnam, consequuntur unde, temporibus accusamus distinctio.</p>
                                 </div>
-                                <img src="placeholder-gray.png"/>
+                                <div class="col">
+                                    <img src="placeholder-gray.png"/>
+                                </div>
                             </div>                        
                         </div>
                         </div>
                     <!-- Left and right controls/icons -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
-                    </button>
+                    </button> -->
                 </div>
             </div>
         </div>   
     </header>
 
     <main>
-        <section id="about"></section>
-        <section id="featured"></section>
-        <section id="contact"></section>
+
+        <section id="about">
+            <h2>ABOUT US</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum voluptates, ratione laborum labore quod fugiat magni corporis rerum id sequi autem ea tenetur nemo perferendis nulla aperiam dicta necessitatibus reiciendis.</p>
+            <button>Learn more</button>
+        </section>
+
+
+        <section id="featured">
+            <h3>Quality Vines </h3>           
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum voluptates, ratione laborum labore quod fugiat magni corporis rerum id sequi autem ea tenetur nemo perferendis nulla aperiam dicta necessitatibus reiciendis.</p>
+            <div id="featuredProducts" class="container">
+                <!-- grid here with images of species -->
+            </div>
+        </section>
+
+        <section id="contact">
+            <h3>Contact Us</h3> 
+        </section>
     </main>
 
     <footer></footer>
