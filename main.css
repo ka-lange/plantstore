@@ -1,21 +1,55 @@
+body{
+    /* background:linear-gradient(0deg, rgba(69, 82, 63, .8), rgba(69, 82, 63, .8)), url(pothosleaves.webp); */
+    /* background-size: 200%; */
+    background-color: rgba(167, 175, 157, .8);
+    color: black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
 /* Navbar */
 #navbar {
     padding: 20px 30px;
-    background-color: rgba(190, 75, 62);  
+    border-bottom: 3px solid #BC4A3C;
 }
+
 #navbar a {
     color: black;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#navbar a:hover {
+    color: #BC4A3C;
 }
 
 /* Banner Home */
 #bannerHome {
     height: 100vh;
-    background-color: rgba(190, 75, 62);
+    /* background-color: rgba(190, 75, 62); */
     
 }
-#bannerHome img {
-    width: 500px;
+#bannerHome h1{
+    color: #BC4A3C;
 }
+#bannerHome img {
+    min-width: 350px;
+    min-height: 350px;
+    max-width: 500px;
+    max-height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+#bannerHome i {
+    color: #BC4A3C;
+    padding: 10px;
+    font-size: 50px;
+}
+
+
 
 /* General Section */
 section {
@@ -24,18 +58,19 @@ section {
 
 /* about section */
 
-#about {
-    background-color: #FFF6F4;
+#about .container{
+    background-color: white;
+    padding: 30px;
 }
 
 /* featured section */
 
 #featured {
-    background-color: #FFF6F4;
+    background-color: #BC4A3C;
 }
 
 /* contact section */
 
 #contact {
-    background-color: #FFF6F4;
+    
 }
