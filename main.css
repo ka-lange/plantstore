@@ -58,6 +58,7 @@ hr {
 /* General Section */
 section {
     padding: 60px 30px;
+    text-align: center;
 }
 
 /* about section */
@@ -73,8 +74,27 @@ section {
     background-color: #BC4A3C;
 }
 
+#featured img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 20px;
+}
+
 /* contact section */
 
 #contact {
     
+}
+
+/* Buttons */
+
+.btn { 
+    background-color: #BC4A3C;
+    color:white;
+    font-size: 20px;
+    border-radius: 100px;
+}
+.btn-invert {
+    background-color: rgba(167, 175, 157, .8);
+    color: black;
 }
