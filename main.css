@@ -26,19 +26,18 @@ body{
     #navbar {
         padding: 20px 30px;
     }
-    #logo{
-        margin: 2px 0 0 0;
-        padding: 0;
-    }
-
-    #navbar a {
+   
+    .nav-link, #logo {
         color: black;
         cursor: pointer;
         font-size: 20px;
+        padding: 0;
+        margin: 10px 10px 0 10px;
     }
-
-    #navbar a:hover {
-        color: #BC4A3C;
+    .nav-link-active, 
+    .nav-link:hover{
+        border-bottom: 2px solid #BC4A3C;
+        color:black;
     }
 
     hr {
