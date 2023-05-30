@@ -6,49 +6,55 @@ body{
     font-family: Arial, Helvetica, sans-serif
 }
 
-h1, h2, h3, h4{
-    text-align: center;
-}
-h2 {
-    color: #BC4A3C;
-}
-h3 {
-    color: #2F4858;
-}
-h4 {
-    color: white;
-}
+/* HEADERS */
+
+    .h-blue {
+        color: #2F4858;
+    }
+    .h-orange {
+        color: #BC4A3C;
+    }
+    .h-white {
+        color: white;
+    }
+    .h-black {
+        color: black;
+    }
 
 
-/* Navbar */
-#navbar {
-    padding: 20px 30px;
-}
+/* NAVBAR */
+    #navbar {
+        padding: 20px 30px;
+    }
+    #logo{
+        margin: 2px 0 0 0;
+        padding: 0;
+    }
 
-#navbar a {
-    color: black;
-    cursor: pointer;
-    font-size: 20px;
-}
+    #navbar a {
+        color: black;
+        cursor: pointer;
+        font-size: 20px;
+    }
 
-#navbar a:hover {
-    color: #BC4A3C;
-}
+    #navbar a:hover {
+        color: #BC4A3C;
+    }
 
-hr {
-    border-bottom: 2px solid #2F4858;
-    
-}
+    hr {
+        border-bottom: 2px solid #2F4858;  
+    }
 
+    header{
+        height: 100vh;
+    }
 /* Banner Home */
 #bannerHome {
-    height: 100vh;
+    /* height: 100vh; */
     /* background-color: rgba(190, 75, 62); */
     
 }
-#bannerHome h1{
-    color: #BC4A3C;
-}
+
 #bannerHome img {
     min-width: 350px;
     min-height: 350px;
@@ -58,18 +64,6 @@ hr {
     object-fit: cover;
    
 }
-
-#bannerHome i {
-    color: #2F4858;
-    padding: 10px;
-    font-size: 50px;
-}
-#bannerHome i:hover{
-    color: #BC4A3C;
-    
-}
-
-
 
 /* General Section */
 section {
@@ -83,18 +77,13 @@ section {
     background-color: white;
     padding: 30px;
 }
-#about h2 {
-    color:#BC4A3C;
-}
 
 /* featured section */
 
 #featured {
     background-color: #6B877F;
 }
-#featured .circle{
 
-}
 #featured img {
     width: 300px;
     height: 300px;
@@ -102,21 +91,50 @@ section {
     margin: 20px;
 }
 
-/* contact section */
 
-#contact {
-    
-}
 
-/* Buttons */
+/* BUTTONS */
 
 .btn { 
-    background-color: #2F4858;
-    color:white;
     font-size: 20px;
     border-radius: 100px;
 }
-.btn-invert {
-    background-color: rgba(167, 175, 157, .8);
-    color: black;
+.btn-blue {
+    background-color: #2F4858;
+    color: white;
 }
+.btn-orange {
+    background-color: #BC4A3C;
+    color: white;
+}
+.btn-o-blue {
+    border: 2px solid #2F4858;
+    color: #2F4858;
+}
+.btn-o-orange {
+    border: 2px solid #BC4A3C;
+    color:#BC4A3C;
+}
+
+
+/* BOOTSTRAP ICONS */
+.bi{
+    padding: 10px;
+    font-size: 50px;
+}
+.bi-small{
+    font-size: 25px;
+}
+.icon-blue {
+    color: #2F4858;
+}
+.icon-blue:hover{
+    color: #BC4A3C;
+}
+.icon-orange {
+    color: #BC4A3C;
+}
+.icon-orange:hover{
+    color: #2F4858;
+}
+
