@@ -6,20 +6,7 @@ body{
     font-family: Arial, Helvetica, sans-serif
 }
 
-/* HEADERS */
 
-    .h-blue {
-        color: #2F4858;
-    }
-    .h-orange {
-        color: #BC4A3C;
-    }
-    .h-white {
-        color: white;
-    }
-    .h-black {
-        color: black;
-    }
 
 
 /* NAVBAR */
@@ -83,57 +70,79 @@ section {
     background-color: #6B877F;
 }
 
-#featured img {
+.circle-img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
     margin: 20px;
 }
 
+/* SHOP */
+.shop-item {
+    background-color: #6B877F;
+    border-radius: 50px;
+    color: white;
+}
 
+/* HEADERS */
+
+    .h-blue {
+        color: #2F4858;
+    }
+    .h-orange {
+        color: #BC4A3C;
+    }
+    .h-white {
+        color: white;
+    }
+    .h-black {
+        color: black;
+    }
 
 /* BUTTONS */
 
-.btn { 
-    font-size: 20px;
-    border-radius: 100px;
-}
-.btn-blue {
-    background-color: #2F4858;
-    color: white;
-}
-.btn-orange {
-    background-color: #BC4A3C;
-    color: white;
-}
-.btn-o-blue {
-    border: 2px solid #2F4858;
-    color: #2F4858;
-}
-.btn-o-orange {
-    border: 2px solid #BC4A3C;
-    color:#BC4A3C;
-}
+    .btn { 
+        font-size: 20px;
+        border-radius: 100px;
+    }
+    .btn-blue {
+        background-color: #2F4858;
+        color: white;
+    }
+    .btn-orange {
+        background-color: #BC4A3C;
+        color: white;
+    }
+    .btn-o-blue {
+        border: 2px solid #2F4858;
+        color: #2F4858;
+    }
+    .btn-o-orange {
+        border: 2px solid #BC4A3C;
+        color:#BC4A3C;
+    }
 
 
 /* BOOTSTRAP ICONS */
-.bi{
-    padding: 10px;
-    font-size: 50px;
-}
-.bi-small{
-    font-size: 25px;
-}
-.icon-blue {
-    color: #2F4858;
-}
-.icon-blue:hover{
-    color: #BC4A3C;
-}
-.icon-orange {
-    color: #BC4A3C;
-}
-.icon-orange:hover{
-    color: #2F4858;
-}
+    .bi{
+        padding: 10px;
+        font-size: 50px;
+        cursor: pointer;
+    }
+    .bi-small{
+        font-size: 25px;
+        padding-top: 5px;
+    }
+    .icon-blue {
+        color: #2F4858;
+    }
+    .icon-blue:hover{
+        color: #BC4A3C;
+    }
+    .icon-orange {
+        color: #BC4A3C;
+    }
+    .icon-orange:hover{
+        color: #2F4858;
+    }
 
