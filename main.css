@@ -34,22 +34,7 @@ body{
     header{
         height: 100vh;
     }
-/* Banner Home */
-#bannerHome {
-    /* height: 100vh; */
-    /* background-color: rgba(190, 75, 62); */
-    
-}
 
-#bannerHome img {
-    min-width: 350px;
-    min-height: 350px;
-    max-width: 500px;
-    max-height: 500px;
-    border-radius: 50%;
-    object-fit: cover;
-   
-}
 
 /* General Section */
 section {
@@ -70,14 +55,24 @@ section {
     background-color: #6B877F;
 }
 
-.circle-img {
+
+.circle-img-sm {
+    width: 200px;
+    height: 200px;
+}
+.circle-img-md {
     width: 300px;
     height: 300px;
-    border-radius: 50%;
-    margin: 20px;
+    border-radius:50%;
+    /* margin: 20px; */
 }
-.circle {
+.circle-img-lg {
+    width: 350px;
+    height: 350px;
+    max-width: 500px;
+    max-height: 500px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 /* SHOP */
@@ -149,4 +144,22 @@ section {
     .icon-orange:hover{
         color: #2F4858;
     }
+
+    .animate-jump {
+        animation: jumpInfinite 1.5s infinite;
+    }
+      
+
+/* animations */
+@keyframes jumpInfinite {
+    0% {
+      margin-top: 0;
+    }
+    50% {
+      margin-top: 20px;
+    }
+    100% {
+      margin-top: 0;
+    }
+  }
 
