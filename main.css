@@ -76,6 +76,9 @@ section {
     border-radius: 50%;
     margin: 20px;
 }
+.circle {
+    border-radius: 50%;
+}
 
 /* SHOP */
 .shop-item {
