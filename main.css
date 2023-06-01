@@ -6,9 +6,6 @@ body{
     font-family: Arial, Helvetica, sans-serif
 }
 
-
-
-
 /* NAVBAR */
     #navbar {
         padding: 20px 30px;
@@ -31,14 +28,17 @@ body{
         border-bottom: 2px solid #2F4858;  
     }
 
-    header{
-        height: 100vh;
-    }
+header{
+    height: 100vh;
+}
 
 
 /* General Section */
 section {
     padding: 60px 30px;
+    
+}
+.section-center{
     text-align: center;
 }
 
