@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+ 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <title>POTHOS</title>
+
+</head>
+
+<body class="main-layout">
+    <!-- page loader -->
+    <div class="loader_bg" style="display: none;">
+        <div class="loader"><img src="images/loading.gif" alt="#"></div>
+    </div><!-- end loader -->
+
+        <nav id="navbar" class="d-flex justify-content-between align-content-center" data-aos="fade-in">
+            <div id="logo"><a>POTHOS</a></div>
+            <ul class="nav ">
+                <li class="nav-item"><a class="nav-link" href="/index.html">home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">about</a></li>
+                <li class="nav-item"><a class="nav-link" href="shop.html">shop</a></li>
+                <li class="nav-item"><a class="nav-link nav-link-active" href="care.html">care</a></li>
+                <i class="bi bi-cart2 bi-small"></i>
+            </ul>
+        </nav>
+        <hr data-aos="flip-left" data-aos-duration="1000"/> 
+
+
+        <form class="w-50 m-5" action="/plants" method="POST">
+            <div class="mb-3 input-group">
+                <span class="input-group-text" id="inputGroup-sizing-default">Common Name</span>
+                <input type="text" name="common-name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="mb-3 input-group">
+                <span class="input-group-text" id="inputGroup-sizing-default">Scientific Name</span>
+                <input type="text" name="scientific-name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="mb-3 input-group">
+                <span class="input-group-text">Description</span>
+                <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
+            </div>
+            <div class="mb-3 input-group">
+                <span class="input-group-text">Light Requirement</span>
+                <div class="form-control">
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected="">Select Requirement</option>
+                    <option value="1">Low Light</option>
+                    <option value="2">Moderate Light</option>
+                    <option value="3">High Light</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3 input-group">
+                <label for="toxicity-pets" class="form-label">Toxic to Pets?</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="toxicity-pets" id="toxicity-pets-true" value="true">
+                    <label class="form-check-label" for="toxicity-pets-true">yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="toxicity-pets" id="toxicity-pets-false" value="false">
+                    <label class="form-check-label" for="toxicity-pets-false">no</label>
+                </div>
+            </div>
+            
+            
+            <div class="mb-3 input-group">
+                <label for="toxicity-pets" class="form-label">Toxic to Humans?</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="toxicity-humans" id="toxicity-humans-true" value="true">
+                    <label class="form-check-label" for="toxicity-humans-true">yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="toxicity-humans" id="toxicity-humans-false" value="false">
+                    <label class="form-check-label" for="toxicity-humans-false">no</label>
+                </div>
+            </div>
+
+            
+            
+            <button type="submit" class="btn btn-primary">Add to Database</button>
+          </form>
+
+
+        <form class="col d-flex flex-column justify-content-center align-content-center" >
+            <fieldset class="d-flex">
+                <h5 class="mx-2" for="commonName">Common Name: </h5>
+                <input type="text" id="commonName" placeholder="Common Name" name="common-name"/>
+            </fieldset>
+            <fieldset class="d-flex">
+                <h5 class="mx-2" for="scientificName">Scientific Name: </h5>
+                <input type="text" id="scientificName" placeholder="Scientific Name" name="scientific-name"/>
+            </fieldset>
+            <fieldset class="d-flex">
+                <h5 class="mx-2" for="description">Description: </h5>
+                <input type="text" id="description" placeholder="Description" name="description"/>
+            </fieldset>
+            <fieldset class="d-flex">
+                <h5 class="mx-2" for="water">Water Requirement: water every</h5>
+                
+                <input type="number" name="number">
+                <input list="timeAmount" name="water-requirement">
+                
+                <datalist id="timeAmount">
+                    <option value="days">
+                    <option value="weeks">
+                    <option value="months">
+                </datalist>
+            
+            </fieldset>
+            <fieldset class="d-flex">
+                <h5 class="mx-2">Light Requirement:</h5>
+                <div>
+                  <input type="checkbox" id="lightHigh" name="light-requirement" value="high" />
+                  <label for="lightHigh">High</label>
+            
+                  <input type="checkbox" id="lightModerate" name="light-requirement" value="moderate" />
+                  <label for="lightModerate">Moderate</label>
+
+                  <input type="checkbox" id="lightLow" name="light-requirement" value="low" />
+                  <label for="lightLow">Low</label>
+                </div>
+              </fieldset>
+            <fieldset class="d-flex">
+                <h5 class="mx-2">Toxic to Pets?</h5>
+                <div>
+                  <input type="checkbox" id="petToxicityYes" name="pet-toxicity" value="true" />
+                  <label for="petToxicityYes">Yes</label>
+            
+                  <input type="checkbox" id="petToxicityNo" name="pet-toxicity" value="false" />
+                  <label for="petToxicityNo">No</label>
+                </div>
+              </fieldset>
+              <fieldset class="d-flex">
+                <h5 class="mx-2">Toxic to Humans?</h5>
+                <div>
+                  <input type="checkbox" id="humanToxicityYes" name="human-toxicity" value="true" />
+                  <label for="humanToxicityYes">Yes</label>
+            
+                  <input type="checkbox" id="humanToxicityNo" name="human-toxicity" value="false" />
+                  <label for="humanToxicityNo">No</label>
+                </div>
+              </fieldset>
+            
+            <button type="submit">Add to Database</button>
+          </form>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>    
+    
+    <!-- AOS javascript -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>   
+</body>
+</html>

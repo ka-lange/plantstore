@@ -9,6 +9,7 @@ body{
 /* NAVBAR */
     #navbar {
         padding: 20px 30px;
+        background-color: #6B877F;
     }
    
     .nav-link, #logo {
