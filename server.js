@@ -1,4 +1,3 @@
-console.log('server up')
 const express = require('express')
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
@@ -7,7 +6,20 @@ const app = express()
 const mongodbPassword = 'dMj1fPBHNoc9bHKV'
 const connectionString = `mongodb+srv://kalange266:${mongodbPassword}@cluster0.wq94s3k.mongodb.net/?retryWrites=true&w=majority`
 
+app.use("/public", express.static('./public/'));
+app.use('/PlantPhotos', express.static('PlantPhotos'))
 
+app.get('/', (req, res)=> {
+    res.sendFile(__dirname + '/index.html')
+})
+
+// do this for all pages - see if you can factor it to be one request
+app.get('/:pageName', (req, res)=> {
+    const pageName = req.params.pageName;
+    if (pageName) { //check to see if frogName exists and returns it's json if it does
+        res.sendFile(__dirname + `/${pageName}.html`)
+    }
+})
 
 MongoClient.connect(connectionString, { useUnifiedTopology: true })
   .then(client => {
@@ -33,7 +45,7 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         plantsCollection
             .insertOne(req.body)
             .then(result => {
-                res.redirect('/')
+                res.redirect('/adminPlantEntry')
             })
             .catch(error => console.error(error))
     })
