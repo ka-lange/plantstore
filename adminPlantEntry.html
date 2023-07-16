@@ -31,76 +31,83 @@
             <div id="logo" class=""><a>POTHOS</a></div>
             <div  class=""><a>new plant entry form</a></div>
         </nav>
-        <hr data-aos="flip-left" data-aos-duration="1000"/> 
 
-
-        <form class="w-50 m-5" action="/plants" method="POST">
-            <div class="mb-3 input-group">
-                <span class="input-group-text" id="inputGroup-sizing-default">Common Name</span>
-                <input type="text" name="common-name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="mb-3 input-group">
-                <span class="input-group-text" id="inputGroup-sizing-default">Scientific Name</span>
-                <input type="text" name="scientific-name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="mb-3 input-group">
-                <span class="input-group-text">Description</span>
-                <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
-            </div>
-            <div class="mb-3 input-group">
-                <span class="input-group-text">Water Every</span>
-                <div class="form-control d-flex">
-                    <input type="number" class="w-25" name="waterFrequency">
-                    <select class="w-50 form-select form-select-sm" aria-label=".form-select-sm example">
-                        <option selected="">choose</option>
-                        <option value="day(s)">day(s)</option>
-                        <option value="week(s)">week(s)</option>
-                        <option value="month(s)">month(s)</option>
-                    </select>
+        <div class="d-flex justify-content-center m-3">
+            <form id="adminForm" class="w-50 d-flex flex-column" action="/plants" method="POST">
+                <div class="mb-3 input-group">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Common Name</span>
+                    <input type="text" name="common-name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
-            </div>
-            <div class="mb-3 input-group">
-                <span class="input-group-text">Light Requirement</span>
-                <div class="form-control">
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected="">Select Requirement</option>
-                    <option value="1">Low Light</option>
-                    <option value="2">Moderate Light</option>
-                    <option value="3">High Light</option>
-                    </select>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Scientific Name</span>
+                    <input type="text" name="scientific-name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
-            </div>
-
-            <div class="mb-3 input-group">
-                <label for="toxicity-pets" class="form-label">Toxic to Pets?</label>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="toxicity-pets" id="toxicity-pets-true" value="true">
-                    <label class="form-check-label" for="toxicity-pets-true">yes</label>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text">Description</span>
+                    <textarea class="form-control" name="description" aria-label="With textarea"></textarea>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="toxicity-pets" id="toxicity-pets-false" value="false">
-                    <label class="form-check-label" for="toxicity-pets-false">no</label>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text">Water Every</span>
+                    <div class="form-control d-flex">
+                        <input type="number" class="w-25" name="waterFrequency"> 
+                        <select class="w-50 form-select form-select-sm" aria-label=".form-select-sm example" name="waterFrequency" >
+                            <option selected="">choose</option>
+                            <option value="day(s)">day(s)</option>
+                            <option value="week(s)">week(s)</option>
+                            <option value="month(s)">month(s)</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            
-            
-            <div class="mb-3 input-group">
-                <label for="toxicity-pets" class="form-label">Toxic to Humans?</label>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="toxicity-humans" id="toxicity-humans-true" value="true">
-                    <label class="form-check-label" for="toxicity-humans-true">yes</label>
+                <div class="mb-3 input-group">
+                    <span class="input-group-text">Light Requirement</span>
+                    <div class="form-control">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option selected="">Select Requirement</option>
+                            <option value="1">Low Light</option>
+                            <option value="2">Moderate Light</option>
+                            <option value="3">High Light</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="toxicity-humans" id="toxicity-humans-false" value="false">
-                    <label class="form-check-label" for="toxicity-humans-false">no</label>
+                
+                <div class="mb-3 input-group d-flex">
+                    
+                        <span class="input-group-text">Pet Safety</span>
+                        <div class="form-control d-flex flex-column">
+                            <div class="d-flex">
+                                <div>
+                                    <input checked type="radio" id="safetyChoiceSafe" name="safety" value="safe_pets" />
+                                    <label for="safetyChoiceSafe">Safe for Pets</label>
+                                </div>
+                                <div class="px-4">
+                                    <input type="radio" id="safetyChoiceUnsafe" name="safety" value="unsafe_pets" />
+                                    <label for="safetyChoiceUnsafe">Not Safe for Pets</label>
+                                </div>
+                            </div>
+                            <div  class="mt-2">
+                                <label for="safetyNotes">Notes:</label>
+                                <input class="w-75" type="text" id="safetyNotes" name="safetyNotes"/>    
+                            </div>
+                        </div>
+                
+                    
                 </div>
-            </div>
-
-            
-            
-            <button type="submit" class="btn btn-orange">Add to Database</button>
-          </form>
-
+                <div class="mb-3 input-group">
+                    <span class="input-group-text">Img File Name</span>
+                    <div class="form-control d-flex">
+                        <span>PlantPhotos/</span>
+                        <input type="text" class="mx-3" name="imgFile">
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="imgFile">
+                            <option selected="">Select File Extension</option>
+                            <option value=".jpeg">.jpeg</option>
+                            <option value=".png">.png</option>
+                            <option value=".webp">.webp</option>
+                        </select>
+                    </div>                
+                </div>
+                <button type="submit" class="btn btn-orange align-self-center">Add to Database</button>
+            </form>
+        </div>
 
     
     <!-- Bootstrap Bundle with Popper -->
