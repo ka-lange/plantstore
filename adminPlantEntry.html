@@ -94,15 +94,19 @@
                 </div>
                 <div class="mb-3 input-group">
                     <span class="input-group-text">Img File Name</span>
-                    <div class="form-control d-flex">
-                        <span>PlantPhotos/</span>
-                        <input type="text" class="mx-3" name="imgFile">
-                        <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="imgFile">
-                            <option selected="">Select File Extension</option>
-                            <option value=".jpeg">.jpeg</option>
-                            <option value=".png">.png</option>
-                            <option value=".webp">.webp</option>
-                        </select>
+                    <div class="form-control d-flex flex-column">
+                        <div>
+                            <span>PlantPhotos/</span>
+                            <input type="text" class="mx-3" name="imgFile">
+                        </div>
+                        <div class="mt-2">
+                            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="imgFile">
+                                <option selected="">Select File Extension</option>
+                                <option value=".jpeg">.jpeg</option>
+                                <option value=".png">.png</option>
+                                <option value=".webp">.webp</option>
+                            </select>
+                        </div>
                     </div>                
                 </div>
                 <button type="submit" class="btn btn-orange align-self-center">Add to Database</button>
