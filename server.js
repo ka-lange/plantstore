@@ -6,8 +6,11 @@ const app = express()
 const mongodbPassword = 'dMj1fPBHNoc9bHKV'
 const connectionString = `mongodb+srv://kalange266:${mongodbPassword}@cluster0.wq94s3k.mongodb.net/?retryWrites=true&w=majority`
 
+app.set('view engine', 'ejs')
+
 app.use("/public", express.static('./public/'));
 app.use('/PlantPhotos', express.static('PlantPhotos'))
+
 
 app.get('/', (req, res)=> {
     res.sendFile(__dirname + '/index.html')
@@ -17,7 +20,7 @@ app.get('/', (req, res)=> {
 app.get('/:pageName', (req, res)=> {
     const pageName = req.params.pageName;
     if (pageName) { //check to see if frogName exists and returns it's json if it does
-        res.sendFile(__dirname + `/${pageName}.html`)
+        res.sendFile(__dirname + `/${pageName}.html`) //will need to update the file extension name to include ejs???
     }
 })
 
@@ -40,7 +43,17 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
         res.sendFile(__dirname + '/adminPlantEntry.html')
         
     })
-    
+    // new section: attempt to connect to ejs care sheet template
+    app.get('/CareSheet', (req, res) => {
+        plantsCollection.find().toArray()
+            .then(results => {
+                console.log(results)
+                res.render('CareSheet.ejs', { plants: results })
+            })
+            .catch(error => console.error(error))
+        
+    })
+
     app.post('/plants', (req, res) => {
         plantsCollection
             .insertOne(req.body)
