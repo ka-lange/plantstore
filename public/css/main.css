@@ -6,10 +6,25 @@ black: 000000
 lightgreen: bfd2b0
 */
 
+
+*::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #f7fef7;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #bfd2b0;
+    border-radius: 20px;
+    border: 3px solid #f7fef7;
+  }
+
 body{
     /* background:linear-gradient(0deg, rgba(69, 82, 63, .8), rgba(69, 82, 63, .8)), url(pothosleaves.webp); */
     /* background-size: 200%; */
-    background-color: #f7fef7;
+    /* background-color: #f7fef7; */
     color: black;
     font-family: Arial, Helvetica, sans-serif
 }
@@ -17,11 +32,9 @@ body{
 /* NAVBAR */
     #navbar {
         padding: 20px 30px;
-        background-color: #458069;
     }
    
     .nav-link, #logo {
-        color: black;
         cursor: pointer;
         font-size: 20px;
         padding: 0;
@@ -29,13 +42,12 @@ body{
     }
     .nav-link-active, 
     .nav-link:hover{
-        border-bottom: 2px solid #BC4A3C;
-        color:black;
+        color: #e4a099;
+        border: 3px solid #e4a099;
+        border-width: 0 0 3px 0;
     }
 
-    hr {
-        border-bottom: 2px solid #2F4858;  
-    }
+    
 
 header{
     height: 100vh;
@@ -47,22 +59,19 @@ section {
     padding: 60px 30px;
     
 }
+i{
+    cursor: pointer;
+}
 .section-center{
     text-align: center;
 }
 
 /* about section */
 
-#about .container{
-    background-color: white;
-    padding: 30px;
-}
+
 
 /* featured section */
 
-#featured {
-    background-color: #2f4858;
-}
 
 
 .circle-img-sm {
@@ -86,14 +95,14 @@ section {
 
 /* SHOP */
 .shop-item {
-    background-color: #6B877F;
+   
     border-radius: 50px;
-    color: white;
+    
     
 }
 
 /* HEADERS */
-
+/* 
     .h-blue {
         color: #2F4858;
     }
@@ -105,15 +114,22 @@ section {
     }
     .h-black {
         color: black;
-    }
+    } */
 
 /* BUTTONS */
 
     .btn { 
         font-size: 20px;
+        border-width: 3px;
         border-radius: 100px;
     }
-    .btn-blue {
+    .btn-o-dark{
+        border-color: #0d1109;
+    }
+    .btn-o-primary{
+        border-color: #37472b;
+    }
+    /* .btn-blue {
         background-color: #2F4858;
         color: white;
     }
@@ -128,7 +144,7 @@ section {
     .btn-o-orange {
         border: 2px solid #BC4A3C;
         color:#BC4A3C;
-    }
+    } */
 
 
 /* BOOTSTRAP ICONS */
@@ -141,7 +157,13 @@ section {
         font-size: 25px;
         padding-top: 5px;
     }
-    .icon-blue {
+    .icon {
+        cursor: pointer;
+    }
+    /* .shopIcon{
+        border-bottom-right-radius: ;
+    } */
+    /* .icon-blue {
         color: #2F4858;
     }
     .icon-blue:hover{
@@ -152,12 +174,14 @@ section {
     }
     .icon-orange:hover{
         color: #2F4858;
-    }
+    } */
 
     .animate-jump {
         animation: jumpInfinite 1.5s infinite;
     }
       
+
+
 
 /* animations */
 @keyframes jumpInfinite {
