@@ -4,9 +4,8 @@ module.exports = {
     getIndex: async (req,res)=>{
         // res.render('index.ejs') //renders ejs file and reponds with it
         try{
-            // const Habits = await Habit.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
-            // const itemsLeft = await Todo.countDocuments({completed: false})
-            res.render('admin.ejs')
+            const Plants = await Plant.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
+            res.render('admin.ejs', {plants: Plants})
         }catch(err){
             console.log(err)
         }
@@ -16,7 +15,9 @@ module.exports = {
             await Plant.create({
                 commonName: req.body.commonName, 
                 scientificName: req.body.scientificName,
+                description: req.body.description,
                 price: req.body.price,
+                quantity: req.body.quantity,
                 inCart: false,
                 }) 
             console.log('plant has been added!')
@@ -25,5 +26,29 @@ module.exports = {
             console.log(err)
         }
     },
-    
+    adminDelete: async (req,res)=>{
+        //console.log(req.body.habitIdFromJSFile)
+        try{
+            await Plant.findOneAndDelete({_id:req.body.plantIdFromJSFile})
+            console.log(`Deleted Plant`)
+            res.json('Deleted It')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    adminEdit: async (req, res)=>{
+        try{
+            await Plant.findOneAndUpdate({_id:req.body.plantIdFromJSFile},{
+                commonName: req.body.newCommonNameFromJSFile,
+                scientificName: req.body.newScientificNameFromJSFile,
+                description: req.body.newDescriptionFromJSFile,
+                price: req.body.newPriceFromJSFile,
+                quantity: req.body.newQuantityFromJSFile,
+            })
+            console.log('Plant changed!')
+            res.json('Plant Changed')
+        }catch(err){
+            console.log(err)
+        }
+    },
 }

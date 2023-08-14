@@ -11,6 +11,7 @@ const shopRoutes = require('./routes/shop')
 const careRoutes = require('./routes/care')
 const referenceRoutes = require('./routes/reference')
 const adminRoutes = require('./routes/admin')
+const cartRoutes = require('./routes/cart')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -33,6 +34,7 @@ app.use('/shop', shopRoutes)
 app.use('/care', careRoutes)
 app.use('/reference', referenceRoutes)
 app.use('/admin', adminRoutes)
+app.use('/cart', cartRoutes)
 
     
 app.listen(process.env.PORT, ()=>{

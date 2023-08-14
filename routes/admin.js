@@ -6,4 +6,8 @@ router.get('/', adminController.getIndex) //uses home controller to get index pa
 
 router.post('/addPlant', adminController.addPlant)
 
+router.put('/adminEdit', adminController.adminEdit) 
+
+router.delete('/adminDelete', adminController.adminDelete)
+
 module.exports = router
