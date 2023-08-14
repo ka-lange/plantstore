@@ -43,10 +43,12 @@ body{
     .nav-link-active, 
     .nav-link:hover{
         color: #e4a099;
-        border: 3px solid #e4a099;
-        border-width: 0 0 3px 0;
+        
     }
-
+  
+.hover-success:hover{
+    color: #e4a099;
+}
     
 
 header{
@@ -93,12 +95,11 @@ i{
     object-fit: cover;
 }
 
+
+
 /* SHOP */
 .shop-item {
-   
     border-radius: 50px;
-    
-    
 }
 
 /* HEADERS */

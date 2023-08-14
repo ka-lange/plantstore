@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="public/css/main.css">
     
     <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+       
     <title>Pothos</title>
     <link rel="icon" href="PlantPhotos/pothosLogo.png">
 
@@ -27,15 +30,16 @@
 <!-- navbar -->
 <nav id="navbar" class="d-flex justify-content-between align-items-center bg-primary" data-aos="fade-in">
             
-    <img class="" style="width: 175px" src="PlantPhotos/pothosHomepageLogo.png">
+    <a href="/"><img class="" style="width: 175px" src="PlantPhotos/pothosHomepageLogo.png"></a>
      
     <!-- <div id="logo"><a>POTHOS</a></div> -->
     <ul class="nav pt-4">
-        <li class="nav-item"><a class="nav-link nav-link-active" href="/home">home</a></li>
-        <li class="nav-item"><a class="nav-link link-secondary " href="/about">about</a></li>
-        <li class="nav-item"><a class="nav-link link-secondary " href="/shop">shop</a></li>
-        <li class="nav-item"><a class="nav-link link-secondary " href="/care">care</a></li>
-        <i class="bi bi-cart2 bi-small"></i>
+        <li class="hover-success"><a class="nav-link text-success" href="/">home</a></li>
+        <li class="hover-success"><a class="nav-link text-secondary" href="/about">about</a></li>
+        <li class="nav-item"><a class="nav-link text-secondary" href="/shop">shop</a></li>
+        <li class="nav-item"><a class="nav-link text-secondary" href="/care">care</a></li>
+        <li class="nav-item" ><a class="nav-link" href="/cart"><i class="material-icons text-success">shopping_cart</i></a></li> 
+
     </ul>
 </nav>
 
@@ -79,7 +83,7 @@
 
 <!-- headings -->
 <h1 class="text-decoration-underline text-center p-3">Headings</h1>  
-    <div class="d-flex justify-content-between py-5">
+    <div class="d-flex justify-content-between p-5">
             <div>
                 <h1>Heading 1</h1>
                 <h2>Heading 2</h2>
@@ -327,53 +331,66 @@
 <hr data-aos="flip-left" data-aos-duration="1000"/>
 <!-- footer -->
 <h1 class="text-decoration-underline text-center p-3">Footer</h1>
-    <div class="container">
-            <footer class="py-5">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-2">
-                        <h5 class="h-black">pothos (dropup?)</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">home</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">about</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">shop</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">plant care</a></li>
-                        </ul>
-                    </div>
-            
-                    <div class="col-2">
-                        <h5 class="h-black">links</h5>
-                        <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                        </ul>
-                    </div>
-            
-                    <div class="col-4 offset-1">
-                        <form>
-                            <h5 class="h-black">Subscribe to our newsletter</h5>
-                            <p>for exciting bi-wekly updates, deals, and plant care tips</p>
-                            <div class="d-flex w-100 gap-2">
-                                <label for="newsletter1" class="visually-hidden">Email address</label>
-                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                                <button class="btn btn-orange" type="button">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-    
-                <hr data-aos="flip-left" data-aos-duration="1000"/>
-    
-                <div class="d-flex justify-content-between py-4 my-4">
-                    <p>© 2023 Pothos, Inc. All rights reserved.</p>
-                    <ul class="list-unstyled d-flex">
-                        <li class="ms-4"><a href="#"><i class="bi bi-small bi-facebook"></i></a></li>
-                        <li class="ms-4"><a href="#"><i class="bi bi-small bi-instagram"></i></a></li>
-                        <li class="ms-4"><a href="#"><i class="bi bi-small bi-twitter"></i></a></li>
-                        <!-- <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
+    <!-- footer -->
+    <div class="container-fluid bg-secondary">
+        <footer class="">
+            <div class="row d-flex justify-content-between">
+                <div class="col py-3">
+                    <h5 class="h-black">Pothos</h5>
+                    <ul class="nav flex-column">
+                        <li class="mb-2"><a href="#" class="nav-link hover-success p-0 text-muted">home</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link p-0 text-muted">about</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link p-0 text-muted">shop</a></li>
+                        <li class="mb-2"><a href="#" class="nav-link p-0 text-muted">plant care</a></li>
                     </ul>
                 </div>
-            </footer>
+        
+                <div class="col py-3">
+                    <h5 class="h-black">Links</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="/reference" class="nav-link p-0 text-muted">style ref</a></li>
+                        <li class="nav-item mb-2"><a href="/admin" class="nav-link p-0 text-muted">ADMIN</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="care-sheet-template.html" class="nav-link p-0 text-muted">Care sheet template</a></li>
+                    </ul>
+                </div>
+        
+                <!-- <div class="col-2">
+                    <h5 class="h-black">Section</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                        
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                    </ul>
+                </div> -->
+        
+                <div class="col-md-6 py-3">
+                    <form>
+                        <h5 class="h-black">Subscribe to our newsletter</h5>
+                        <p>for exciting bi-wekly updates, deals, and plant care tips</p>
+                        <div class="d-flex w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-orange" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <hr data-aos="flip-left" data-aos-duration="1000"/>
+
+            <div class="d-flex justify-content-between py-4">
+                <p>© 2023 Pothos, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-4"><a href="#"><i class="bi bi-small icon-blue bi-facebook"></i></a></li>
+                    <li class="ms-4"><a href="#"><i class="bi bi-small icon-blue bi-instagram"></i></a></li>
+                    <li class="ms-4"><a href="#"><i class="bi bi-small icon-blue bi-twitter"></i></a></li>
+                    <!-- <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
+                </ul>
+            </div>
+        </footer>
         </div>
 
         
