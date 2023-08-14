@@ -9,14 +9,24 @@ const PlantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  description: {
+    type: String,
+    required: true,
+  },
   price: {
+    type: Number,
+    required: true,
+  },
+  quantity: {
     type: Number,
     required: true,
   },
   inCart: {
     type: Boolean,
     required: true,
-  }
+  },
+//   quantity avilable to be sold
+
 })
 
 module.exports = mongoose.model('Plant', PlantSchema)
