@@ -4,6 +4,7 @@ const connectDB = require('./config/database')
 
 
 
+
 //page routes
 const homeRoutes = require('./routes/home')
 const aboutRoutes = require('./routes/about')
@@ -20,7 +21,9 @@ connectDB()  //initialize connecting the server to the database via config/datab
 app.set('view engine', 'ejs')
 
 app.use("/public", express.static('./public/'));
-// app.use("/scss", express.static('./scss/'));
+app.use("/scss", express.static('./scss/'));
+app.use(express.static(__dirname + '/public'));
+
 // app.use("/js", express.static('./js/'));
 app.use('/PlantPhotos', express.static('PlantPhotos'))
 
