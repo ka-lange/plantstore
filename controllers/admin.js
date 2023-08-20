@@ -5,7 +5,34 @@ module.exports = {
         // res.render('index.ejs') //renders ejs file and reponds with it
         try{
             const Plants = await Plant.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
-            res.render('admin.ejs', {plants: Plants})
+            res.render('admin/home.ejs', {plants: Plants})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getAddIndex: async (req,res)=>{
+        // res.render('index.ejs') //renders ejs file and reponds with it
+        try{
+            const Plants = await Plant.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
+            res.render('admin/add.ejs', {plants: Plants})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getEditIndex: async (req,res)=>{
+        // res.render('index.ejs') //renders ejs file and reponds with it
+        try{
+            const Plants = await Plant.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
+            res.render('admin/edit.ejs', {plants: Plants})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getPreviewIndex: async (req,res)=>{
+        // res.render('index.ejs') //renders ejs file and reponds with it
+        try{
+            const Plants = await Plant.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
+            res.render('admin/preview.ejs', {plants: Plants})
         }catch(err){
             console.log(err)
         }
@@ -15,6 +42,7 @@ module.exports = {
             await Plant.create({
                 commonName: req.body.commonName, 
                 scientificName: req.body.scientificName,
+                type: req.body.type,
                 description: req.body.description,
                 price: req.body.price,
                 quantity: req.body.quantity,
