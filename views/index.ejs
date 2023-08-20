@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -10,38 +10,84 @@
     
    <!-- Compiled Bootstrap CSS -->
    <link href="public/css/custom.css" rel="stylesheet">
+   
    <!-- Custom CSS -->
    <link rel="stylesheet" href="public/css/main.css">
    
    <link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">    
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+         
    <title>Pothos</title>
    <link rel="icon" href="PlantPhotos/pothosLogo.png?">
 
 </head>
+
 <body class="main-layout bg-secondary">
-    
-
-    <header data-aos="fade-in" data-aos-delay="600">
-        <nav id="navbar" class="d-flex justify-content-between align-items-center bg-primary" data-aos="fade-in">
-            
-            <img class="" style="width: 175px" src="PlantPhotos/pothosHomepageLogo.png">
-             
-            <!-- <div id="logo"><a>POTHOS</a></div> -->
-            <ul class="nav pt-4">
-                <li class="nav-item"><a class="nav-link nav-link-active" href="/">home</a></li>
-                <li class="nav-item"><a class="nav-link link-secondary " href="/about">about</a></li>
-                <li class="nav-item"><a class="nav-link link-secondary " href="/shop">shop</a></li>
-                <li class="nav-item"><a class="nav-link link-secondary " href="/care">care</a></li>
-                <i class="bi bi-cart2 bi-small"></i>
-            </ul>
+    <header>
+        <nav class="navbar navbar-expand-md bg-primary p-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img class="" style="width: 175px" src="PlantPhotos/pothosHomepageLogo.png"></a>
+                <button class="navbar-toggler bg-success mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class=" collapse navbar-collapse mt-3" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/about">About</a></li>
+                        <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/shop">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/care">Care</a></li>
+                        <li class="nav-item" ><a class="nav-link" href="/cart"><i class="bi bi-cart2 bi-small text-success"></i></a></li> 
+                    </ul>
+                </div>
+            </div>
         </nav>
-    
-        <div id="bannerHome" class="container-fluid bg-primary">
 
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="PlantPhotos/2.png" class="d-block w-100" style="height: 500px; object-fit: cover; " alt="...">
+                    <div class="carousel-caption">
+                        <h1 class="text-light">Lush New Arrivals</h1>
+                        <p class="fs-4">Check out the shop or scroll down to see what's new on our shelves</p>
+                        
+                        <button class="btn btn-success">Shop Now</button>
+                      </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="PlantPhotos/1.png" class="d-block w-100" style="height: 500px; object-fit: cover; " alt="...">
+                    <div class="carousel-caption">
+                        <h1>Shop More, Save More!</h1>
+                        <p class="fs-4">Earn 20% off your entire purchase when you add 3 or more plants to your order.</p>
+                        <button class="btn btn-success">shop now</button>
+                    </div>
+                </div>
+              
+                <div class="carousel-item">
+                    <img src="PlantPhotos/3.png" class="d-block w-100" style="height: 500px; object-fit: cover; " alt="...">
+                    <div class="carousel-caption">
+                        <h1>Plant Care</h1>
+                        <p class="fs-4">Keep plants healthy in your space</p>
+                        <button class="btn btn-success">Find Your Plant</button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+          
+        
+        
+        <!-- <div id="bannerHome" class="container-fluid bg-primary">
             <div class="container ">
-                <!-- Carousel -->
+                
                 <div id="demo" class="carousel slide p-5" data-bs-ride="carousel">
-                    <!-- Indicators/dots -->
+                   
                     <div>
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
@@ -50,13 +96,13 @@
                         </div>
                     </div>  
 
-                    <!-- The slideshow/carousel -->
+                  
                     <div class="carousel-inner">
-                        <!-- carousel item 1 -->
+             
                         <div class="carousel-item active">
                             <div class="row">
                                 <div class="col d-flex flex-column justify-content-center align-content-center text-center">
-                                    <h1 class="text-center text-success">new arrivals</h1>
+                                    <h1 class="text-center text-success">New Arrivals</h1>
                                     <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                                 </div>
                                 <div class="col d-flex justify-content-center">
@@ -65,12 +111,12 @@
                             </div>
                         </div>
 
-                        <!-- carousel item 2 -->
+                
                         <div class="carousel-item">
                             <div class="row">
                                 <div class="col d-flex flex-column justify-content-center align-content-center text-center">
-                                    <h1 class="text-center h-orange">let's talk about plant care</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    <h1 class="text-center text-success">Care Guides</h1>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                                 </div>
                                 <div class="col d-flex justify-content-center">
                                     <img class="circle-img-lg" src="/PlantPhotos/rhaphido-monstera.webp"/>
@@ -78,12 +124,12 @@
                             </div>                    
                         </div>
 
-                        <!-- carousel item 3 -->
+                   
                         <div class="carousel-item">
                             <div class="row">
                                 <div class="col d-flex flex-column justify-content-center align-content-center text-center">
-                                    <h1 class="text-center h-orange">let's talk about plant care</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    <h1 class="text-center text-success">Shop More, Save More!</h1>
+                                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                                 </div>
                                 <div class="col d-flex justify-content-center">
                                     <img class="circle-img-lg" src="/PlantPhotos/rhaphido-monstera.webp"/>
@@ -91,33 +137,28 @@
                             </div>                    
                         </div>
                     </div>
-                </div> 
+                </div>  -->
                 <!-- end carousel -->
-
                 <!-- <div class="container d-flex justify-content-between">
                     Left and right controls/icons 
                     <i class="bi icon-blue bi-arrow-left-circle-fill" type="button" data-bs-target="#demo" data-bs-slide="prev"></i>
                     <i class="bi icon-blue bi-arrow-right-circle-fill" type="button" data-bs-target="#demo" data-bs-slide="next"></i>
                 </div> -->
-            </div>
-        </div> 
-        <section class="conteiner-fluid d-flex">
-            <img src="PlantPhotos/">
-        </section>
+            <!-- </div>
+        </div>  -->
+        
         <div class="d-flex flex-column align-content-center justify-content-end text-center p-5">
-            <h4>learn more</h4>
-            <div class="animate-jump">
-                <i id="" class="bi bi-arrow-down-short"></i>
-            </div>
+            <h1>Happy, Healthy Vines</h1>
+            <p>bringing you beautiful, full, and healthy plants</p>
         </div>  
     </header>
 
     <main>
         <section id="about" data-aos="zoom-in" class="section-center bg-light">
             <div class="container">
-                <h2 class="text-center h-orange">About Us</h2>
-                <p>here at POTHOS, it's our mission to bring the beauty of green into your home. we not only provide happy, healthy plants but also continued support to keep them that way</p>
-                <button type="button" class="btn btn-success btn-o-dark">read more</button>
+                <h2 class="text-center">Plant People with a Purpose</h2>
+                <p>Here at Pothos, it's our mission to bring the beauty of green into your home. However, we know our job is not complete when our plant enters your home. That's why we offer continued support and guidance on care so you can grow more and worry less!</p>
+                <a href="/about"><button type="button" class="btn btn-success border-2 border-dark">Read More</button></a> 
             </div>
         </section>
 
@@ -125,42 +166,44 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="">
-                            <h2 class="text-center">Quality Vines </h2>           
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum voluptates, ratione laborum labore quod fugiat magni corporis rerum id sequi autem ea tenetur nemo perferendis nulla aperiam dicta necessitatibus reiciendis.</p>
+                        <div class="text-dark">
+                            <h2 class="text-center pb-3">Quality Vines: Featured Products</h2>           
+                            <!-- <p class="fs-5">At Pothos, we're not all about sales. Our mission is to bring you quality plants that will last long and look healthy. </p> -->
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                
+                <div class="row p-4">
                     <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
-                        <h3 class="text-center h-blue">global pothos</h3>
+                        <h3 class="text-center">Global Pothos</h3>
                         <img class="img-fluid circle-img-md border-primary" src="PlantPhotos/global-pothos.webp">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
-                        <h3 class="text-center h-blue">golden pothos</h3>
+                        <h3 class="text-center">Golden Pothos</h3>
                         <img class="img-fluid circle-img-md" src="PlantPhotos/golden-pothos.jpeg">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
-                        <h3 class="text-center h-blue">marble queen</h3>
+                        <h3 class="text-center">Marble Queen</h3>
                         <img class="img-fluid circle-img-md" src="PlantPhotos/marble-pothos.jpeg">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
-                        <h3 class="text-center h-blue">snow queen</h3>
+                        <h3 class="text-center">Snow Queen</h3>
                         <img class="img-fluid circle-img-md" src="PlantPhotos/snow-pothos.webp">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
-                        <h3 class="text-center h-blue">mini monstera</h3>
+                        <h3 class="text-center">Mini Monstera</h3>
                         <img class="img-fluid circle-img-md" src="PlantPhotos/rhaphido-monstera.webp">
                     </div>
                     <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
-                        <h3 class="text-center h-blue">satin pothos</h3>
+                        <h3 class="text-center">Satin Pothos</h3>
                         <img class="img-fluid circle-img-md" src="PlantPhotos/satin-pothos.webp">
                     </div>
                     
-                    <div class="col-sm-12">
-                        <button type="button" class="btn btn-success btn-o-dark">shop now</button>
-                    </div>
+                   
                 </div>
+                <div class="col-sm-12">
+                    <a href="/shop"> <button type="button" class="btn btn-large btn-success border-2 border-dark">Shop All</button></a>
+                 </div>
             </div>
         </section>
 
@@ -189,69 +232,43 @@
 
     
 <!-- footer -->
-    <div class="container-fluid bg-primary">
-        <footer class="">
-            <div class="row d-flex justify-content-between">
-                <div class="col py-3">
-                    <h5 class="h-black">Pothos</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">home</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">about</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">shop</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">plant care</a></li>
-                    </ul>
+    <footer class="container-fluid bg-primary">
+        <div class="row p-3">
+            <ul class="nav pt-4 d-flex justify-content-center">
+                <li class="nav-item"><a class="nav-link nav-link-active" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link link-secondary " href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link link-secondary " href="/shop">Shop</a></li>
+                <li class="nav-item"><a class="nav-link link-secondary " href="/care">Care</a></li>
+                <li class="nav-item"><a href="/reference" class="nav-link link-secondary">Reference</a></li>
+                <li class="nav-item"><a href="/admin" class="nav-link link-secondary">Admin</a></li>
+            </ul>
+        </div>
+        <div class="row p-3">
+            <ul class="list-unstyled d-flex justify-content-center">
+                <li class="ms-4"><a href="#"><i class="bi bi-small bi-facebook text-success"></i></a></li>
+                <li class="ms-4"><a href="#"><i class="bi bi-small bi-instagram text-success"></i></a></li>
+                <li class="ms-4"><a href="#"><i class="bi bi-small bi-twitter text-success"></i></a></li>
+            </ul>
+        </div>
+        <hr class="text-secondary">
+        <div class="row p-5 d-flex justify-content-center text-success">
+            <form>
+                <h3 class="text-center pb-4">Subscribe to our Newsletter</h3>
+                <!-- <p>for exciting bi-wekly updates, deals, and plant care tips</p> -->
+                <div class="input-group mb-3 m-auto" style="max-width: 600px">
+                    <input type="text" class="form-control bg-light" placeholder="Email Address" aria-label="Email Address" aria-describedby="button-subscribe">
+                    <button class="btn btn-success" type="button" id="button-subscribe">Subscribe</button>
                 </div>
-        
-                <div class="col py-3">
-                    <h5 class="h-black">Links</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="/reference" class="nav-link p-0 text-muted">style ref</a></li>
-                        <li class="nav-item mb-2"><a href="/admin" class="nav-link p-0 text-muted">ADMIN</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="care-sheet-template.html" class="nav-link p-0 text-muted">Care sheet template</a></li>
-                    </ul>
-                </div>
-        
-                <!-- <div class="col-2">
-                    <h5 class="h-black">Section</h5>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-                        
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
-                    </ul>
-                </div> -->
-        
-                <div class="col-md-6 py-3">
-                    <form>
-                        <h5 class="h-black">Subscribe to our newsletter</h5>
-                        <p>for exciting bi-wekly updates, deals, and plant care tips</p>
-                        <div class="d-flex w-100 gap-2">
-                            <label for="newsletter1" class="visually-hidden">Email address</label>
-                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                            <button class="btn btn-orange" type="button">Subscribe</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <hr data-aos="flip-left" data-aos-duration="1000"/>
-
-            <div class="d-flex justify-content-between py-4">
-                <p>© 2023 Pothos, Inc. All rights reserved.</p>
-                <ul class="list-unstyled d-flex">
-                    <li class="ms-4"><a href="#"><i class="bi bi-small icon-blue bi-facebook"></i></a></li>
-                    <li class="ms-4"><a href="#"><i class="bi bi-small icon-blue bi-instagram"></i></a></li>
-                    <li class="ms-4"><a href="#"><i class="bi bi-small icon-blue bi-twitter"></i></a></li>
-                    <!-- <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> -->
-                </ul>
-            </div>
-        </footer>
-    </div>
+            </form>
+        </div>
+        <div class="py-4">
+            <p class="text-center text-light">© 2023 Pothos, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    
     
     <!-- Bootstrap Bundle with Popper -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>     -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>    
     
     <!-- AOS javascript -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
