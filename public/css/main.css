@@ -5,7 +5,7 @@ pink: e4a099
 black: 000000
 lightgreen: bfd2b0
 */
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
 *::-webkit-scrollbar {
     width: 12px;
@@ -50,6 +50,10 @@ body{
     color: #e4a099;
 }
     
+.carousel-caption{
+    padding-bottom: 25vh;
+}
+
 
 header{
     height: 100vh;
