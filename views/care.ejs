@@ -41,35 +41,115 @@
         </div>
     </nav>
 
-    <main>
-        <input list="plantsList" name="plantsDatalist" onfocus="this.value=''" onchange="this.blur();">
-        
-        <section class="">
-            <div class="row p-5">
+    <main class="bg-secondary">
+        <!-- <div class="dropdown text-center">
+            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Find Your Plant
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <% plants.forEach( el => { %>
+                    <li><a class="dropdown-item" href="#"><%= el.commonName %></a></li>
+                    <% }) %>
+            </ul>
+        </div> -->
+        <div class="container-fluid">
+            <!-- make collapsible on small screen -->
+            <div class="row d-flex">
+                <div class="col-lg-2 col-md-3 bg-success">
+                    <nav class="navbar navbar-expand-md">
+                        <div class="container-fluid d-flex flex-column">
+                          
+                            <button class=" border-0 bg-success" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <h3>Find Your Plant:</h3>
+                                <span class="bi bi-search-heart fs-1"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav d-flex flex-column">
+                                    <% plants.forEach( el => { %>
+                                        <li class="nav-item careLink border-bottom" data-id='<%= el._id %>'>
+                                            <div class="nav-link text-dark " aria-current="page" ><%= el.commonName %></div>
+                                            <!-- <a href="care/<%= el._id %>" ><button><%= el.commonName %></button></a> -->
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                        </div>
+                      </nav>
+              
+                </div>
+          
+            <div class="col-lg-10 col-md-9 text-center ">
+                <section id="plantCareMission">
+                    <h1>our mission</h1>
+                </section>
                 
-                <div class="col d-flex flex-column justify-content-center align-content-center">
-                    <h1 class="h-orange">Common Name</h1>
-                    <span class="fst-italic h-blue">Scientific name</span>
-                    <p>Description of plant here :  Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                    <i class="bi bi-droplet">Water Requirement</i>
-                    <i class="bi bi-brightness-high">Light Requirement</i>
-                    <!-- when plant is toxic -->
-                    <span class="material-symbols-outlined bi">skull</span> 
-                    <!-- when plant is safe -->
-                    <span class="material-symbols-outlined bi">pets</span>
-                </div>
-                <div class="col d-flex justify-content-center align-content-center w-50">
-                    <img class="img-fluid" src="/PlantPhotos/brasil-philo.webp"/>
-                </div>
+                <section id="plantCareSheet" style="visibility: hidden;">
+                    <h1 id="commonName"></h1>
+                    <h1 id="scientificName"></h1>
+                    <div class="row">
+                        <div class="col">
+                            <img class="img-fluid" src="PlantPhotos/marble-pothos.jpeg">
+                        </div>
+                        <div class="col">
+                            <h4>title</h4>
+                            <p id="description" class="text-start"></p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <h3 id="price" class="m-3"></h3>
+                        <i class="bi fs-1 bi-cart-plus text-success"></i>
+                    </div>
+                </section>
+                <!-- <section id="featured" class="section-center bg-secondary">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text-dark">
+                                    <h2 class="text-center pb-3">Quality Vines: Featured Products</h2>           
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row p-4">
+                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
+                                <h3 class="text-center">Global Pothos</h3>
+                                <img class="img-fluid circle-img-md border-primary" src="PlantPhotos/global-pothos.webp">
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
+                                <h3 class="text-center">Golden Pothos</h3>
+                                <img class="img-fluid circle-img-md" src="PlantPhotos/golden-pothos.jpeg">
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
+                                <h3 class="text-center">Marble Queen</h3>
+                                <img class="img-fluid circle-img-md" src="PlantPhotos/marble-pothos.jpeg">
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
+                                <h3 class="text-center">Snow Queen</h3>
+                                <img class="img-fluid circle-img-md" src="PlantPhotos/snow-pothos.webp">
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
+                                <h3 class="text-center">Mini Monstera</h3>
+                                <img class="img-fluid circle-img-md" src="PlantPhotos/rhaphido-monstera.webp">
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
+                                <h3 class="text-center">Satin Pothos</h3>
+                                <img class="img-fluid circle-img-md" src="PlantPhotos/satin-pothos.webp">
+                            </div>
+                            
+                           
+                        </div>
+                        <div class="col-sm-12">
+                            <a href="/shop"> <button type="button" class="btn btn-large btn-success border-2 border-dark">Shop All</button></a>
+                         </div>
+                    </div>
+                </section> -->
             </div>
-        </section>
+          
+            </div>
+          </div>
         
-        <div>
-            
-        </div>
-        <div>
-            
-        </div>
+        
     </main>
 
     
