@@ -11,6 +11,10 @@ router.get('/preview', adminController.getPreviewIndex)
 router.post('/addPlant', adminController.addPlant)
 
 router.put('/adminEdit', adminController.adminEdit) 
+router.put('/setFeatured', adminController.setFeatured) 
+router.put('/removeFeatured', adminController.removeFeatured) 
+router.put('/setActive', adminController.setActive) 
+router.put('/setInActive', adminController.setInActive) 
 
 router.delete('/adminDelete', adminController.adminDelete)
 
