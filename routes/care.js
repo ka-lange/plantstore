@@ -7,4 +7,5 @@ router.get('/', careController.getIndex) //uses home controller to get index pag
 // router.get('/getCareSheet', careController.getCareSheet) 
 router.get(`/:id`, careController.getPlantById);
 
+
 module.exports = router

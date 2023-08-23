@@ -20,13 +20,16 @@ lightgreen: bfd2b0
     border-radius: 20px;
     border: 3px solid #f7fef7;
   }
-
+html{
+    background-color: #37472b;
+}
 body{
     /* background:linear-gradient(0deg, rgba(69, 82, 63, .8), rgba(69, 82, 63, .8)), url(pothosleaves.webp); */
     /* background-size: 200%; */
     /* background-color: #f7fef7; */
     color: black;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
+    
 }
 
 /* NAVBAR */
