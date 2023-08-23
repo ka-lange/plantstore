@@ -1,8 +1,16 @@
 const express = require('express')
 const app = express()
 const connectDB = require('./config/database')
+// const cloudinary = require('cloudinary').v2;
+// cloudinary.config({
+//     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//     api_key: process.env.CLOUDINARY_API_KEY ,
+//     api_secret: process.env.CLOUDINARY_API_SECRET ,
+// })
 
-
+// cloudinary.v2.uploader.upload("PlantPhotos/rhaphido-monstera.webp",
+//   { public_id: "mini_monstera" }, 
+//   function(error, result) {console.log(result); });
 
 
 //page routes
@@ -43,64 +51,4 @@ app.use('/cart', cartRoutes)
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it!')
 })  
-
-
-// app.get('/', (req, res)=> {
-//     res.sendFile(__dirname + '/index.html')
-// })
-
-// do this for all pages - see if you can factor it to be one request
-// app.get('/:pageName', (req, res)=> {
-//     const pageName = req.params.pageName;
-//     if (pageName) { //check to see if frogName exists and returns it's json if it does
-//         res.sendFile(__dirname + `/${pageName}.html`) //will need to update the file extension name to include ejs???
-//     }
-// })
-
-// MongoClient.connect(connectionString, { useUnifiedTopology: true })
-//   .then(client => {
-//     console.log('Connected to Database')
-//     const db = client.db('adminPlantEntry')
-//     const plantsCollection = db.collection('plants')
-
-//     app.use(bodyParser.urlencoded({ extended: true }))
-    
-//     app.get('/', (req, res) => {
-//         db.collection('plants')
-//             .find()
-//             .toArray()
-//             .then(results => {
-//             console.log(results)
-//         })
-//         .catch(error => console.error(error))
-//         res.sendFile(__dirname + '/adminPlantEntry.html')
-        
-//     })
-//     // new section: attempt to connect to ejs care sheet template
-//     app.get('/CareSheet', (req, res) => {
-//         plantsCollection.find().toArray()
-//             .then(results => {
-//                 console.log(results)
-//                 res.render('CareSheet.ejs', { plants: results })
-//             })
-//             .catch(error => console.error(error))
-        
-//     })
-
-//     app.post('/plants', (req, res) => {
-//         plantsCollection
-//             .insertOne(req.body)
-//             .then(result => {
-//                 res.redirect('/adminPlantEntry')
-//             })
-//             .catch(error => console.error(error))
-//     })
-
-
-
-
-
-
-
-
 
