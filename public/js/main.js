@@ -1,44 +1,45 @@
+const carePage = document.getElementById('carePage')
+window.onload = function() {
+    if(carePage){
+        loadCarePage()
+    }
+  };
+
 const addToCartButton = document.querySelectorAll('.addToCart')
-const adminEditBtn = document.querySelectorAll('.adminEdit')
-const adminDeleteBtn = document.querySelectorAll('.adminDelete')
-
-const adminAddButton = document.getElementById('adminAddBtn')
-const adminEditButton = document.getElementById('adminEditBtn')
-const adminPreviewButton = document.getElementById('adminPreviewBtn')
-
-const adminAddSection = document.getElementById('adminAddSection')
-const adminEditSection = document.getElementById('adminEditSection')
 
 const careLink = document.querySelectorAll('.careLink')
+
+const commonName = document.querySelector('#commonName')
+const scientificName = document.querySelector('#scientificName')
+const description = document.querySelector('#description')
+const price = document.querySelector('#price')
+const img = document.querySelector('#img')
+const waterReq = document.querySelector('#waterReq')
+const waterNotes = document.querySelector('#waterNotes')
+const lightReq = document.querySelector('#lightReq')
+const lightNotes = document.querySelector('#lightNotes')
+const toxicity = document.querySelector('#toxicity')
+const toxicityNotes = document.querySelector('#toxicityNotes')
 
 Array.from(careLink).forEach((link)=>{
     link.addEventListener('click', getCareSheet)
 })
 
-adminAddButton.addEventListener('click', ()=>{
-    adminAddSection.style.removeProperty('display')
-    adminEditSection.style.display = 'none'
-})
-adminEditButton.addEventListener('click', ()=>{
-    adminEditSection.style.removeProperty('display')
-    adminAddSection.style.display = 'none'
-})
+// Array.from(addToCartButton).forEach((el)=>{
+//     el.addEventListener('click', addToCart)
+// })
 
-Array.from(addToCartButton).forEach((el)=>{
-    el.addEventListener('click', addToCart)
-})
+function loadCarePage(){
+    var clickedId = localStorage.getItem("clickedId");
+    if(clickedId !== ' '){
+        choosePlantFromCare(clickedId)
+    } else {
+        const plantCareMission = document.getElementById('plantCareMission')
+        plantCareMission.style.removeProperty('visibility')
+    }
+}
 
-Array.from(adminEditBtn).forEach((btn)=>{
-    btn.addEventListener('click', adminEdit)
-})
-
-Array.from(adminDeleteBtn).forEach((btn)=>{
-    btn.addEventListener('click', adminDelete)
-})
-
-async function addToCart(){
-    const plantId = this.parentNode.parentNode.parentNode.dataset.id //see if you can simplify this at all
-    console.log(plantId)
+async function addToCart(plantId){
     try{
         const response = await fetch('shop/addToCart', {
             method: 'put',
@@ -54,12 +55,91 @@ async function addToCart(){
         console.log(err)
     }
 }
+async function getShopSheet(plantId) {
+   try{
+        const response = await fetch(`/care/${plantId}`) 
+        const data = await response.json() //reading response and setting to data variable
+        console.log(data) //confirmation
+        document.querySelector('#shopCommonName').innerText = data.commonName
+        document.querySelector('#shopPrice').innerText = data.price
+   }catch(err){ 
+           console.log(err) //print error if error 
+    }
+}
 
-async function adminDelete(){
-    const plantId = this.dataset.id
-    console.log(plantId)
+
+//////// ADMIN FUNCTIONS SETTING FEATURED/NOT FEATURED AND ACTIVE/INACTIVE ////////
+
+async function adminSetFeatured(plantId){
     try{
-        const response = await fetch('admin/adminDelete', { 
+        const response = await fetch('/admin/setFeatured', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'plantIdFromJSFile': plantId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+async function adminRemoveFeatured(plantId){
+    try{
+        const response = await fetch('/admin/removeFeatured', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'plantIdFromJSFile': plantId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+async function adminSetActive(plantId){
+    try{
+        const response = await fetch('/admin/setActive', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'plantIdFromJSFile': plantId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+async function adminSetInActive(plantId){
+    try{
+        const response = await fetch('/admin/setInActive', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'plantIdFromJSFile': plantId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+
+//////// ADMIN DELETE ////////
+
+async function adminDelete(plantId){
+    try{
+        const response = await fetch('/admin/adminDelete', { 
             method: 'delete',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
@@ -74,60 +154,96 @@ async function adminDelete(){
     }
 }
 
-function adminEdit(){
-    const plantId = this.dataset.id
-    let current = this.parentNode.parentNode
-    let done = this
-    this.innerText = "done"
-    current.classList.add('table-success')
 
-    const commonName = current.querySelector('#commonName')
-    const scientificName = current.querySelector('#scientificName')
-    const description = current.querySelector('#description')
-    const price = current.querySelector('#price')
-    const quantity = current.querySelector('#quantity')
-  
+//////// ADMIN EDIT PAGE TO EDIT DATABASE DOCUMENTS ////////
+function adminEdit(plantId){
+    const editBtn = document.getElementById(`editBtn-${plantId}`);
+    const table = document.getElementById(`table-${plantId}`);
+    console.log(editBtn)
+    editBtn.classList.add('bi-check-square')
+    editBtn.classList.remove('bi-pencil-square')
+    table.classList.add('table-success')
 
-    console.log(commonName)
-    
+
+    const commonName = document.getElementById(`commonName-${plantId}`)
+    const scientificName = document.getElementById(`scientificName-${plantId}`)
+    const type = document.getElementById(`type-${plantId}`)
+    const description = document.getElementById(`description-${plantId}`)
+    const img = document.getElementById(`img-${plantId}`)
+    const price = document.getElementById(`price-${plantId}`)
+    const waterReq = document.getElementById(`waterReq-${plantId}`)
+    const waterNotes = document.getElementById(`waterNotes-${plantId}`)
+    const lightReq = document.getElementById(`lightReq-${plantId}`)
+    const lightNotes = document.getElementById(`lightNotes-${plantId}`)
+    const toxicity = document.getElementById(`toxicity-${plantId}`)
+    const toxicityNotes = document.getElementById(`toxicityNotes-${plantId}`)
+
     commonName.setAttribute("contenteditable", true);
     scientificName.setAttribute("contenteditable", true);
+    type.setAttribute("contenteditable", true);
     description.setAttribute("contenteditable", true);
+    img.setAttribute("contenteditable", true);
     price.setAttribute("contenteditable", true);
-    quantity.setAttribute("contenteditable", true);
+    waterReq.setAttribute("contenteditable", true);
+    waterNotes.setAttribute("contenteditable", true);
+    lightReq.setAttribute("contenteditable", true);
+    lightNotes.setAttribute("contenteditable", true);
+    toxicity.setAttribute("contenteditable", true);
+    toxicityNotes.setAttribute("contenteditable", true);
 
-    done.addEventListener('click', ()=> {
-        this.innerText = "edit_note"
-        current.classList.remove('table-success')
+  
+
+    editBtn.addEventListener('click', ()=> {
+        editBtn.classList.remove('bi-check-square')
+        editBtn.classList.add('bi-pencil-square')
         commonName.setAttribute("contenteditable", false);
         scientificName.setAttribute("contenteditable", false);
+        type.setAttribute("contenteditable", false);
+        img.setAttribute("contenteditable", false);
         description.setAttribute("contenteditable", false);
         price.setAttribute("contenteditable", false);
-        quantity.setAttribute("contenteditable", false);
+        waterReq.setAttribute("contenteditable", false);
+        waterNotes.setAttribute("contenteditable", false);
+        lightReq.setAttribute("contenteditable", false);
+        lightNotes.setAttribute("contenteditable", false);
+        toxicity.setAttribute("contenteditable", false);
+        toxicityNotes.setAttribute("contenteditable", false);
 
         editPlant(plantId)
     })
 
     async function editPlant(id){
         
-        // const newName = this.parentNode.previousElementSibling.previousElementSibling.value
-        console.log(id)
-        const newCommonName = commonName.innerText
-        const newScientificName = scientificName.innerText
-        const newDescription = description.innerText
-        const newPrice = price.innerText
-        const newQuantity = quantity.innerText
+    // commonName
+    // scientificName
+    // type
+    // description
+    // price
+    // waterReq
+    // waterNotes
+    // lightReq
+    // lightNotes
+    // toxicity
+    // toxicityNotes
+
         try{
-            const response = await fetch('admin/adminEdit', { 
+            const response = await fetch('/admin/adminEdit', { 
                 method: 'put',
                 headers: {'Content-type': 'application/json'},
                 body: JSON.stringify({
                     'plantIdFromJSFile': id,
-                    'newCommonNameFromJSFile': newCommonName,
-                    'newScientificNameFromJSFile': newScientificName,
-                    'newDescriptionFromJSFile': newDescription,
-                    'newPriceFromJSFile': newPrice,
-                    'newQuantityFromJSFile': newQuantity,
+                    'newCommonNameFromJSFile': commonName.innerText,
+                    'newScientificNameFromJSFile': scientificName.innerText,
+                    'newTypeFromJSFile': type.innerText,
+                    'newImgFromJSFile': img.innerText,
+                    'newDescriptionFromJSFile': description.innerText,
+                    'newPriceFromJSFile': price.innerText,
+                    'newWaterReqFromJSFile': waterReq.innerText,
+                    'newWaterNotesFromJSFile': waterNotes.innerText,
+                    'newLightReqFromJSFile': lightReq.innerText,
+                    'newLightNotesFromJSFile': lightNotes.innerText,
+                    'newToxicityFromJSFile': toxicity.innerText,
+                    'newToxicityNotesFromJSFile': toxicityNotes.innerText,
                 })
             })
             const data = await response.json()
@@ -139,62 +255,47 @@ function adminEdit(){
     }
 }
 
-async function getCareSheet() {
-    const plantCareSheet = document.getElementById('plantCareSheet')
-    const plantCareMission = document.getElementById('plantCareMission')
-    plantCareMission.style.display = 'none'
-    plantCareSheet.style.visibility = 'visible'
-    const plantId = this.dataset.id
-    // const plantName = this.childNodes[1].innerText
-    const commonName = document.querySelector('#commonName')
-    const scientificName = document.querySelector('#scientificName')
-    const description = document.querySelector('#description')
-    const price = document.querySelector('#price')
-    
-
+//////// CARE PAGE FUNCTIONS ////////
+function choosePlantFromCare(plantId){
+        const plantCareSheet = document.getElementById('plantCareSheet')
+        const plantCareMission = document.getElementById('plantCareMission')
+        const plantShopSheet = document.getElementById('plantShopSheet')
+        if(plantCareMission){
+            plantCareMission.style.display = 'none'
+        }
+        if(plantCareSheet){
+            plantCareSheet.style.removeProperty('display')
+        }
+        if(plantShopSheet){
+            plantShopSheet.style.removeProperty('display')
+        }
+        getCareSheet(plantId)
+}
+function choosePlantFromShop(plantId){
+    localStorage.setItem('clickedId', plantId);
     console.log(plantId)
-    // console.log(plantName)
-
+    let url = `/care`
+    document.location.href=url;
+}
+async function getCareSheet(plantId) {
+    localStorage.setItem('clickedId', ' ');
    try{
-        const response = await fetch(`care/${plantId}`) 
+        const response = await fetch(`/care/${plantId}`) 
         const data = await response.json() //reading response and setting to data variable
         console.log(data) //confirmation
         commonName.innerText = data.commonName
         scientificName.innerText = data.scientificName
         description.innerText = data.description
-        price.innerText = data.price
+        
+        
+        waterNotes.innerText = data.waterNotes
+        lightNotes.innerText = data.lightNotes
+        toxicityNotes.innerText = data.toxicityNotes
+        img.src = data.img
         
    }catch(err){ 
            console.log(err) //print error if error 
     }
-    
-
-//    try{
-//        const response = await fetch(`care/${plantId}`, {
-//            method: 'get', //get request
-//            headers: {'Content-Type': 'application/json'}, //assigning content type of header to json
-//            // body: JSON.stringify({ //set request body and setting it to json 
-//            //   'itemFromJS': chosenFrogSpecies //setting itemFromJS property to itemText
-//            // })
-//        })
-       
-//        const data = await response.json() //reading response and setting to data variable
-//        console.log(data) //confirmation
-//        console.log(data['scientific name'])
-// //        scientificName.innerText = data['scientific name']
-// //        family.innerText = 'Family: ' + data['family']
-// //        lifestyle.innerText = 'Lifestyle: ' + data['lifestyle']
-// //        size.innerText = 'Average Size: ' + data['avg size inches']
-// //        colors.innerText = 'Typical Colors: ' + data['colors']
-// //        pattern.innerText = 'Body Pattern: ' + data['pattern']
-// //        image.src = data['img file']
-// //        // location.reload() //refreshing page
-//    }catch(err){ 
-//        console.log(err) //print error if error 
-//    }
-
-
-
 }
 
 
