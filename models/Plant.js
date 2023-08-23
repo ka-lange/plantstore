@@ -17,18 +17,50 @@ const PlantSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  img: {
+    type: String,
+    required: true,
+  },
   price: {
     type: Number,
     required: true,
   },
-  quantity: {
-    type: Number,
+  waterReq: { 
+    type: String,
     required: true,
+  },
+  waterNotes: { 
+    type: String,
+    required: false,
+  },
+  lightReq: { 
+    type: String,
+    required: true,
+  },
+  lightNotes: { 
+    type: String,
+    required: false,
+  },
+  toxicity: { 
+    type: String,
+    required: true,
+  },
+  toxicityNotes: { 
+    type: String,
+    required: false,
   },
   inCart: {
     type: Boolean,
     required: true,
   },
+  active: {
+    type: Boolean,
+    required: true,
+  },
+  featured: {
+    type: Boolean,
+    required: true,
+  }
 //   quantity avilable to be sold
 
 })
