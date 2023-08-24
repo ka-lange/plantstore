@@ -1,9 +1,14 @@
 const carePage = document.getElementById('carePage')
-window.onload = function() {
-    if(carePage){
-        loadCarePage()
-    }
-  };
+// window.onload = function() {
+//     if(carePage){
+//         loadCarePage()
+//     }
+//   };
+
+function changeURL(id){
+    // window.location.href = `localhost:3000/care/${id}`;
+    location.href = `http://localhost:3000/care` + `/${id}`
+}
 
 const addToCartButton = document.querySelectorAll('.addToCart')
 

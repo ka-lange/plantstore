@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+// var path = require('path');
 const connectDB = require('./config/database')
 // const cloudinary = require('cloudinary').v2;
 // cloudinary.config({
@@ -27,6 +28,7 @@ require('dotenv').config({path: './config/.env'})
 connectDB()  //initialize connecting the server to the database via config/database file
 
 app.set('view engine', 'ejs')
+// app.set('views',path.join(__dirname+'/views/'));
 
 app.use("/public", express.static('./public/'));
 app.use("/scss", express.static('./scss/'));
