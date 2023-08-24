@@ -1,9 +1,8 @@
 const carePage = document.getElementById('carePage')
-window.onload = function() {
-    if(carePage){
-        loadCarePage()
-    }
-  };
+
+function changeURL(id){
+    location.href = `http://localhost:3000/care` + `/${id}`
+}
 
 const addToCartButton = document.querySelectorAll('.addToCart')
 
@@ -24,10 +23,6 @@ const toxicityNotes = document.querySelector('#toxicityNotes')
 Array.from(careLink).forEach((link)=>{
     link.addEventListener('click', getCareSheet)
 })
-
-// Array.from(addToCartButton).forEach((el)=>{
-//     el.addEventListener('click', addToCart)
-// })
 
 function loadCarePage(){
     var clickedId = localStorage.getItem("clickedId");
@@ -255,47 +250,5 @@ function adminEdit(plantId){
     }
 }
 
-//////// CARE PAGE FUNCTIONS ////////
-function choosePlantFromCare(plantId){
-        const plantCareSheet = document.getElementById('plantCareSheet')
-        const plantCareMission = document.getElementById('plantCareMission')
-        const plantShopSheet = document.getElementById('plantShopSheet')
-        if(plantCareMission){
-            plantCareMission.style.display = 'none'
-        }
-        if(plantCareSheet){
-            plantCareSheet.style.removeProperty('display')
-        }
-        if(plantShopSheet){
-            plantShopSheet.style.removeProperty('display')
-        }
-        getCareSheet(plantId)
-}
-function choosePlantFromShop(plantId){
-    localStorage.setItem('clickedId', plantId);
-    console.log(plantId)
-    let url = `/care`
-    document.location.href=url;
-}
-async function getCareSheet(plantId) {
-    localStorage.setItem('clickedId', ' ');
-   try{
-        const response = await fetch(`/care/${plantId}`) 
-        const data = await response.json() //reading response and setting to data variable
-        console.log(data) //confirmation
-        commonName.innerText = data.commonName
-        scientificName.innerText = data.scientificName
-        description.innerText = data.description
-        
-        
-        waterNotes.innerText = data.waterNotes
-        lightNotes.innerText = data.lightNotes
-        toxicityNotes.innerText = data.toxicityNotes
-        img.src = data.img
-        
-   }catch(err){ 
-           console.log(err) //print error if error 
-    }
-}
 
 

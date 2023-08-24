@@ -4,7 +4,7 @@ const shopController = require('../controllers/shop')
 
 router.get('/', shopController.getIndex) //uses home controller to get index page and render index.js from views
 
-
+// router.get(`/:id`, shopController.seePlant)
 
 router.put('/addToCart', shopController.addToCart)
 
