@@ -12,5 +12,18 @@ module.exports = {
             console.log(err)
         }
     },
+    removeFromCart: async (req,res)=>{
+        // res.render('index.ejs') //renders ejs file and reponds with it
+        try{
+            // res.render('shop.ejs', {plants: Plants})
+            await Plant.findOneAndUpdate({_id:req.body.plantIdFromJSFile},{
+                inCart: false 
+            })
+            console.log('Removed to Cart')
+            res.json('Removed to Cart')
+        }catch(err){
+            console.log(err)
+        }
+    },
     
 }

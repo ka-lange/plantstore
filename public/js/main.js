@@ -33,10 +33,42 @@ function loadCarePage(){
         plantCareMission.style.removeProperty('visibility')
     }
 }
+function getTotal(){
+    const itemPrices = document.querySelectorAll('.itemPrice')
+    const totalPrices = document.querySelectorAll('.totalPrice')
+    let totalPrice=0
+    
+    Array.from(itemPrices).forEach((item)=>{
+        totalPrice = totalPrice + Number(item.innerText)
+    })
+    console.log(totalPrice)
+    Array.from(totalPrices).forEach((total)=>{
+        total.innerText = `$ ${totalPrice}.00`
+    })
+}
+
+
+
 
 async function addToCart(plantId){
     try{
         const response = await fetch('shop/addToCart', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'plantIdFromJSFile': plantId
+            })
+        })
+        const data = await response.json()
+        console.log(data)
+        location.reload()
+    }catch(err){
+        console.log(err)
+    }
+}
+async function removeFromCart(plantId){
+    try{
+        const response = await fetch('cart/removeFromCart', {
             method: 'put',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
