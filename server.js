@@ -1,17 +1,17 @@
 const express = require('express')
 const app = express()
 // var path = require('path');
-const connectDB = require('./config/database')
-// const cloudinary = require('cloudinary').v2;
-// cloudinary.config({
-//     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-//     api_key: process.env.CLOUDINARY_API_KEY ,
-//     api_secret: process.env.CLOUDINARY_API_SECRET ,
-// })
-
-// cloudinary.v2.uploader.upload("PlantPhotos/rhaphido-monstera.webp",
-//   { public_id: "mini_monstera" }, 
-//   function(error, result) {console.log(result); });
+// const connectDB = require('./config/database')
+const mongoose = require('mongoose')
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.DB_STRING);
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.log(error);
+      process.exit(1);
+    }
+  }
 
 
 //page routes
@@ -50,7 +50,12 @@ app.use('/admin', adminRoutes)
 app.use('/cart', cartRoutes)
 
     
-app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it!')
-})  
+// app.listen(process.env.PORT, ()=>{
+//     console.log('Server is running, you better catch it!')
+// })  
 
+connectDB().then(() => {
+    app.listen(process.env.PORT, () => {
+        console.log("listening for requests");
+    })
+})
