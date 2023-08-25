@@ -13,7 +13,6 @@ const connectDB = async () => {
     }
   }
 
-
 //page routes
 const homeRoutes = require('./routes/home')
 const aboutRoutes = require('./routes/about')
@@ -25,7 +24,7 @@ const cartRoutes = require('./routes/cart')
 
 require('dotenv').config({path: './config/.env'})
 
-connectDB()  //initialize connecting the server to the database via config/database file
+// connectDB()  //initialize connecting the server to the database via config/database file
 
 app.set('view engine', 'ejs')
 // app.set('views',path.join(__dirname+'/views/'));
