@@ -7,6 +7,14 @@ lightgreen: bfd2b0
 */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,500;1,100;1,300;1,400&display=swap');
+
+
+.h-accent{
+    font-family: Roboto;
+    font-weight: 400;
+}
+
 *::-webkit-scrollbar {
     width: 12px;
   }
@@ -93,9 +101,12 @@ i{
     border-radius:50%;
     /* margin: 20px; */
 }
+/* .circle-img-md:hover {
+    transform: scale(1.1);
+} */
 .circle-img-lg {
-    width: 350px;
-    height: 350px;
+    width: 375px;
+    height: 375px;
     max-width: 500px;
     max-height: 500px;
     border-radius: 50%;
