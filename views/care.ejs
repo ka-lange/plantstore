@@ -44,36 +44,28 @@
     </nav>
 
     <main class="bg-secondary">
-        <!-- <div class="dropdown text-center">
-            <button class="btn btn-success dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Find Your Plant
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <% plants.forEach( el => { %>
-                    <li><a class="dropdown-item" href="#"><%= el.commonName %></a></li>
-                    <% }) %>
-            </ul>
-        </div> -->
         <div class="container-fluid">
-            <!-- make collapsible on small screen -->
             <div class="row d-flex">
-                <div class="col-lg-2 col-md-3 bg-success overflow-y-auto pt-4">
+                <div class="col-lg-2 col-md-3 bg-success overflow-y-auto pt-4 px-0">
                     <nav class="navbar navbar-expand-md">
-                        <div class="container-fluid d-flex flex-column">
+                        <div class="container-fluid d-flex flex-column px-0">
                           
                             <button class=" border-0 bg-success" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                                <h3>Find Your Plant</h3>
+                                <h3 class="h-accent">Find Your Plant</h3>
                                 <span class="bi bi-search-heart fs-1"></span>
                             </button>
 
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav d-flex flex-column">
-                                    <% plants.forEach( el => { %>
-                                        <li onclick="changeURL('<%= el._id %>')" class="nav-item border-bottom" data-id='<%= el._id %>'>
-                                            <div class="nav-link text-dark " aria-current="page"><%= el.commonName %></div>
-                                            <!-- <a href="care/<%= el._id %>" ><button><%= el.commonName %></button></a> -->
-                                        </li>
-                                    <% }) %>
+                                        <% plants.forEach( el => { %>
+                                            <li class="nav-item" data-id='<%= el._id %>'>
+                                                <% if (thisPlant) { %>
+                                                    <li class="nav-item border-bottom py-2"><a class="nav-link link-dark h-accent" href="./<%= el._id %>" style="font-size: 1rem;"><%= el.commonName %></a></li>
+                                                <% } else { %>
+                                                    <li class="nav-item border-bottom py-2"><a class="nav-link link-dark h-accent" href="/care/<%= el._id %>" style="font-size: 1rem;"><%= el.commonName %></a></li>
+                                                <% } %>
+                                            </li>
+                                        <% }) %>
                                 </ul>
                             </div>
                         </div>
@@ -81,16 +73,16 @@
               
                 </div>
           
-            <div class="col-lg-10 col-md-9 text-center px-5" >
+            <div class="col-lg-10 col-md-9 text-center px-3" >
                 <% if(thisPlant) { %>
-                   <section id="plantCareSheet">
-                    <h1><%= thisPlant.commonName %></h1>
+                   <section>
+                    <h1 class="h-accent"><%= thisPlant.commonName %></h1>
                     <h4 class="fst-italic"><%= thisPlant.scientificName %></h4>
-                    <div class="row my-5 d-flex align-items-center">
-                        <div class="col">
-                            <img class="img-fluid" src="/<%= thisPlant.img %>">
+                    <div class="row d-flex align-items-center justify-content-center">
+                        <div class="col-12 col-lg-6 ">
+                            <img class="img-fluid circle-img-lg p-3" src="/<%= thisPlant.img %>">
                         </div>
-                        <div class="col">
+                        <div class="col p-4">
                             
                             <p class="text-start fs-5"><%= thisPlant.description %></p>
                             <div class="d-flex flex-column align-items-start border border-2 border-primary rounded p-2">
@@ -115,13 +107,11 @@
                         <a href="/shop"><button class="m-3 btn btn-success border-2 border-dark">Visit the Shop</button></a>
                     </div>
                 </section>
-                    
-                    
                 <% } else { %> 
-                    <section id="plantCareMission" class="m-auto text-start " >
+                    <section class="m-auto text-start" >
                         <div class="row align-items-center pb-5">
                             <div class="col-12 col-lg-6">
-                                <h1>We're Here to Help!</h1>
+                                <h1 class="h-accent">We're Here to Help!</h1>
                                 <p class="fs-5 py-4">At Pothos, our job is not done when your lush, green vines make it home. We are committed to offer continued support with care and advice if something goes wrong!</p>
                                 <p class="fs-5 pb-4">Find your plant from the menu to view species-specific care guidelines and reccomendations</p>
                             </div>
@@ -133,8 +123,8 @@
                         <hr class=>
                         <div class="row pt-5 text-center">
                             <div class="col">
-                                <h3>Don't see your plant? No worries!</h3>
-                                <p class="fs-5">Even if we haven't sold your plant in our stores, our experts can help if you send them a chat.</p>
+                                <h3 class="h-accent">Don't see your plant? No worries!</h3>
+                                <p class="fs-5 m-3">Even if we haven't sold your plant in our stores, our experts can help if you send them a chat.</p>
                                 <form class=>
                                     <div class="input-group mb-3 m-auto" style="max-width: 600px">
                                         <input type="text" class="form-control bg-light" placeholder="Email Address" aria-label="Email Address" aria-describedby="button-subscribe">
@@ -142,24 +132,16 @@
                                     <div class="input-group mb-3 m-auto" style="max-width: 600px">
                                         <textarea type="text" class="form-control bg-light" placeholder="Message" aria-label="Email Address" aria-describedby="button-subscribe"></textarea>
                                     </div>
-                                    
-                                    
-                                    <button class="btn btn-success border-2 border-dark" type="button" id="button-subscribe">Send Message</button>
+                                    <button class="btn btn-success border-2 border-dark m-3" type="button" id="button-subscribe">Send Message</button>
                                 </form>
                             </div>
                         </div>
                     </section>
                 <% } %> 
-                
-                
-                
-                
             </div>
           
             </div>
-          </div>
-        
-        
+        </div>
     </main>
 
     
@@ -171,7 +153,7 @@
             <li class="nav-item"><a class="nav-link link-secondary " href="/about">About</a></li>
             <li class="nav-item"><a class="nav-link link-secondary " href="/shop">Shop</a></li>
             <li class="nav-item"><a class="nav-link nav-link-active  " href="/care">Care</a></li>
-            <li class="nav-item"><a href="/reference" class="nav-link link-secondary">Reference</a></li>
+            <!-- <li class="nav-item"><a href="/reference" class="nav-link link-secondary">Reference</a></li> -->
             <li class="nav-item"><a href="/admin" class="nav-link link-secondary">Admin</a></li>
         </ul>
     </div>
