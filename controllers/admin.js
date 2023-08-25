@@ -30,9 +30,23 @@ module.exports = {
     },
     getPreviewIndex: async (req,res)=>{
         // res.render('index.ejs') //renders ejs file and reponds with it
+        plantId = req.params.id
         try{
             const Plants = await Plant.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
-            res.render('admin/preview.ejs', {plants: Plants})
+            const thisPlant = await Plant.findById(plantId);
+            res.render('admin/preview.ejs', {plants: Plants, thisPlant: thisPlant})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getPreviewPlant: async (req,res)=>{
+        // res.render('index.ejs') //renders ejs file and reponds with it
+        plantId = req.params.id
+        try{
+            const Plants = await Plant.find()
+            const thisPlant = await Plant.findById(plantId);
+            console.log(thisPlant)
+            res.render('admin/preview.ejs', {plants: Plants, thisPlant: thisPlant})
         }catch(err){
             console.log(err)
         }

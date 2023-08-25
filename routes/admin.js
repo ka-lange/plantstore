@@ -7,6 +7,7 @@ router.get('/', adminController.getIndex) //uses home controller to get index pa
 router.get('/add', adminController.getAddIndex)
 router.get('/edit', adminController.getEditIndex)
 router.get('/preview', adminController.getPreviewIndex)
+router.get('/preview/:id', adminController.getPreviewPlant)
 
 router.post('/addPlant', adminController.addPlant)
 
