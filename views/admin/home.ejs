@@ -27,7 +27,7 @@
 <body class="main-layout bg-secondary">
     
 
-    <nav id="navbar" class="d-flex justify-content-between align-items-center bg-primary" data-aos="fade-in">
+    <nav id="navbar" class="d-flex flex-column flex-md-row justify-content-between align-items-center bg-primary" data-aos="fade-in">
             
         <a href="/"> <img class="" style="width: 175px" src="../PlantPhotos/pothosHomepageLogo.png"></a>
         <h3 class="text-success pt-4">Welcome Admin!</h3> 
@@ -38,14 +38,14 @@
             <li id="adminPreviewBtn" class="nav-item"><a href="admin/preview" class="nav-link link-secondary">preview</a></li>
         </ul> -->
     </nav>
-<section class="" style="height: 75vh;">
-    <h1 class="text-primary text-center p-5">What would you like to do today?</h1>
+<div class="" style="height: 75vh;">
+    <h1 class="text-primary text-center pt-5 h-accent">What would you like to do today?</h1>
     <div class="d-flex flex-wrap justify-content-center">
         <a href="admin/add"><button class="btn btn-outline-primary btn-lg m-3">Add New Plant</button></a>
         <a href="admin/edit"><button class="btn btn-outline-primary btn-lg m-3">Edit Plant Database</button></a>
         <a href="admin/preview"><button class="btn btn-outline-primary btn-lg m-3">Preview Customer Views</button></a>
     </div>
-</section>
+</div>
 
 <footer class="container-fluid bg-primary">
     <div class="row p-3">
@@ -54,19 +54,18 @@
             <li class="nav-item"><a class="nav-link link-secondary " href="/about">About</a></li>
             <li class="nav-item"><a class="nav-link link-secondary " href="/shop">Shop</a></li>
             <li class="nav-item"><a class="nav-link link-secondary " href="/care">Care</a></li>
-            <li class="nav-item"><a href="/reference" class="nav-link link-secondary">Reference</a></li>
+            <!-- <li class="nav-item"><a href="/reference" class="nav-link link-secondary">Reference</a></li> -->
             <li class="nav-item"><a href="/admin" class="nav-link link-secondary">Admin</a></li>
         </ul>
     </div>
-    <div class="row p-3">
-        <ul class="list-unstyled d-flex justify-content-center">
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-facebook text-success"></i></a></li>
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-instagram text-success"></i></a></li>
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-twitter text-success"></i></a></li>
-        </ul>
-    </div>
+
     <hr class="text-secondary">
-    <div class="py-4">
+   
+       
+    
+    <div class="pt-4 d-flex flex-column justify-content-center  align-items-center">
+        <!-- <p class="text-center text-light">Made By Karissa Lange</p> -->
+        <img class="pb-2" style="width: 3rem" src="PlantPhotos/pothosLogo.png" >
         <p class="text-center text-light">© 2023 Pothos, Inc. All rights reserved.</p>
     </div>
 </footer>

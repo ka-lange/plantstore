@@ -25,14 +25,14 @@
 
 <body class="main-layout bg-secondary">
   
-        <nav class="navbar navbar-expand-md bg-primary p-3">
+        <nav class="navbar navbar-expand-md bg-primary py-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/"><img class="" style="width: 175px" src="PlantPhotos/pothosHomepageLogo.png"></a>
+                <a class="navbar-brand " href="/"><img class="" style="width: 175px" src="PlantPhotos/pothosHomepageLogo.png"></a>
                 <button class="navbar-toggler bg-success mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class=" collapse navbar-collapse mt-3" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto text-center">
                         <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/about">About</a></li>
                         <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/shop">Shop</a></li>
@@ -81,18 +81,15 @@
         </div>
         <div class="d-flex flex-column align-items-center justify-content-center text-center py-5">
             <img class="img-fluid" src="/PlantPhotos/4.png" >
-            
         </div>  
 
 
     <main>
-        <section id="about" data-aos="zoom-in" class="section-center bg-light">
-            <div class="container">
-                <h2 class="text-center h-accent">We're plant people with a purpose</h2>
-                <p class="fs-5 m-5">Here at Pothos, it's our mission to bring the beauty of green into your home. However, we know our job is not complete when our plant enters your home. That's why we offer continued support and guidance on care so you can grow more and worry less!</p>
-                <a href="/about"><button type="button" class="btn btn-success border-2 border-dark">Read More</button></a> 
-            </div>
-        </section>
+        <div id="about" data-aos="zoom-in" class=" bg-light container-fluid p-3 text-center">
+            <h2 class="text-center h-accent my-3">We're plant people with a purpose</h2>
+            <p class="fs-5">Here at Pothos, it's our mission to bring the beauty of green into your home. However, we know our job is not complete when our plant enters your home. That's why we offer continued support and guidance on care so you can grow more and worry less!</p>
+            <a href="/about"><button type="button" class="btn btn-success border-2 border-dark my-3">Read More</button></a> 
+        </div>
 
         <section id="featured" class="section-center bg-secondary">
             <div class="container">
@@ -105,12 +102,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-4">
+                <div class="row">
                     <% plants.forEach(el => { %>
                         <% if(el.featured == true) { %>
-                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5" data-aos="fade-up">
+                            <div class="col-xl-4 col-lg-6 col-md-6 pb-5 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
                                 <h3 class="text-center h-accent text-primary"><%= el.commonName %></h3>
-                                <img class="img-fluid circle-img-md border-primary" src="/<%= el.img %>">
+                                <img class="circle-img-md" src="/<%= el.img %>">
                             </div>
                         <% } %>
                     <% }) %>
@@ -136,29 +133,30 @@
                 <li class="nav-item"><a href="/admin" class="nav-link link-secondary">Admin</a></li>
             </ul>
         </div>
-        <div class="row p-3">
+        <div class="">
             <ul class="list-unstyled d-flex justify-content-center">
-                <li class="ms-4"><a href="#"><i class="bi bi-small bi-facebook text-success"></i></a></li>
-                <li class="ms-4"><a href="#"><i class="bi bi-small bi-instagram text-success"></i></a></li>
-                <li class="ms-4"><a href="#"><i class="bi bi-small bi-twitter text-success"></i></a></li>
+                <li class=""><a href="#"><i class="bi bi-small bi-facebook text-success"></i></a></li>
+                <li class="mx-4"><a href="#"><i class="bi bi-small bi-instagram text-success"></i></a></li>
+                <li class=""><a href="#"><i class="bi bi-small bi-twitter text-success"></i></a></li>
             </ul>
         </div>
         <hr class="text-secondary">
-        <div class="row p-5 d-flex justify-content-center text-success">
-            <form>
+       
+            <form class="container p-2 text-success">
                 <h3 class="text-center pb-4">Subscribe to our Newsletter</h3>
                 <!-- <p>for exciting bi-wekly updates, deals, and plant care tips</p> -->
-                <div class="input-group mb-3 m-auto" style="max-width: 600px">
-                    <input type="text" class="form-control bg-light" placeholder="Email Address" aria-label="Email Address" aria-describedby="button-subscribe">
-                    <button class="btn btn-success" type="button" id="button-subscribe">Subscribe</button>
+                <div class="row mb-3 d-flex justify-content-center" >
+                    <input type="text" class="col-12 col-md-4 form-control bg-light rounded p-2 text-center" placeholder="Email Address" aria-label="Email Address" aria-describedby="button-subscribe">
+                    
+                    <button class="btn btn-success col-12 col-md-4 my-3 bg-success rounded text-dark text-center ">Subscribe</button>
                 </div>
             </form>
-        </div>
+    
         
-        <div class="pt-4 d-flex justify-content-center  align-items-center">
+        <div class="pt-4 d-flex flex-column justify-content-center  align-items-center">
             <!-- <p class="text-center text-light">Made By Karissa Lange</p> -->
             <img class="pb-2" style="width: 3rem" src="PlantPhotos/pothosLogo.png" >
-            <!-- <p class="text-center text-light">© 2023 Pothos, Inc. All rights reserved.</p> -->
+            <p class="text-center text-light">© 2023 Pothos, Inc. All rights reserved.</p>
         </div>
     </footer>
     

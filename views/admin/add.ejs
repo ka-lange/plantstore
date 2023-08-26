@@ -25,20 +25,14 @@
 </head>
 
 <body class="main-layout bg-secondary">
-    
-
-    <nav id="navbar" class="d-flex justify-content-between align-items-center bg-primary" data-aos="fade-in">
+    <nav id="navbar" class="d-flex flex-column flex-md-row justify-content-between align-items-center bg-primary" data-aos="fade-in">
             
         <a href="/"> <img class="" style="width: 175px" src="../PlantPhotos/pothosHomepageLogo.png"></a>
-        <h3 class="text-success">Welcome Admin!</h3> 
-        <!-- <div id="logo"><a>POTHOS</a></div> -->
-        <ul class="nav pt-4">
-            <li id="adminAddBtn" class="nav-item"><a href="/admin" class="nav-link link-success">back to admin home</a></li>
-            
-        </ul>
+        <li id="adminAddBtn" class="nav-item"><a href="/admin" class="nav-link link-success">back to admin home</a></li>
+
     </nav>
 
-<section id="adminAddSection">
+<main class="py-5">
     <p class="text-center fs-4 text-primary h-accent">Use this form to add a new plant to the Pothos database</p>
     <hr class="w-50 m-auto">
     <div class="d-flex justify-content-center m-3 pt-3">
@@ -109,10 +103,10 @@
                 <input type="text" name="toxicityNotes" placeholder="Notes on plant toxicity" class="form-control w-50" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
             </div>
             
-            <button type="submit" class="btn btn-success border-dark align-self-center m-5">Add to Database</button>
+            <button type="submit" class="btn btn-success border-dark align-self-center my-5">Add to Database</button>
         </form>
     </div>
-</section>
+</main>
 <footer class="container-fluid bg-primary">
     <div class="row p-3">
         <ul class="nav pt-4 d-flex justify-content-center">
@@ -120,19 +114,18 @@
             <li class="nav-item"><a class="nav-link link-secondary " href="/about">About</a></li>
             <li class="nav-item"><a class="nav-link link-secondary " href="/shop">Shop</a></li>
             <li class="nav-item"><a class="nav-link link-secondary " href="/care">Care</a></li>
-            <li class="nav-item"><a href="/reference" class="nav-link link-secondary">Reference</a></li>
+            <!-- <li class="nav-item"><a href="/reference" class="nav-link link-secondary">Reference</a></li> -->
             <li class="nav-item"><a href="/admin" class="nav-link link-secondary">Admin</a></li>
         </ul>
     </div>
-    <div class="row p-3">
-        <ul class="list-unstyled d-flex justify-content-center">
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-facebook text-success"></i></a></li>
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-instagram text-success"></i></a></li>
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-twitter text-success"></i></a></li>
-        </ul>
-    </div>
+
     <hr class="text-secondary">
-    <div class="py-4">
+   
+       
+    
+    <div class="pt-4 d-flex flex-column justify-content-center  align-items-center">
+        <!-- <p class="text-center text-light">Made By Karissa Lange</p> -->
+        <img class="pb-2" style="width: 3rem" src="/PlantPhotos/pothosLogo.png" >
         <p class="text-center text-light">© 2023 Pothos, Inc. All rights reserved.</p>
     </div>
 </footer>

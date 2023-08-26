@@ -25,7 +25,7 @@
     </head>
 
 <body class="main-layout">
-    <nav class="navbar navbar-expand-md bg-primary p-3">
+    <nav class="navbar navbar-expand-md bg-primary py-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="/"><img class="" style="width: 175px" src="/PlantPhotos/pothosHomepageLogo.png"></a>
             <button class="navbar-toggler bg-success mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,27 +75,28 @@
           
             <div class="col-lg-10 col-md-9 text-center px-3" >
                 <% if(thisPlant) { %>
-                   <section>
+                   <div class="py-5">
                     <h1 class="h-accent"><%= thisPlant.commonName %></h1>
                     <h4 class="fst-italic"><%= thisPlant.scientificName %></h4>
                     <div class="row d-flex align-items-center justify-content-center">
-                        <div class="col-12 col-lg-6 ">
-                            <img class="img-fluid circle-img-lg p-3" src="/<%= thisPlant.img %>">
+                        <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                            <img class="circle-img-md p-3" src="/<%= thisPlant.img %>">
                         </div>
                         <div class="col p-4">
                             
-                            <p class="text-start fs-5"><%= thisPlant.description %></p>
+                            <p class="text-start fs-5 pb-3"><%= thisPlant.description %></p>
                             <div class="d-flex flex-column align-items-start border border-2 border-primary rounded p-2">
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center border-bottom border-primary py-2">
                                     <i class="bi bi-droplet fs-1"></i>
                                     <p class="text-start pt-2"><%= thisPlant.waterNotes %></p>
                                 </div>
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-brightness-high fs-1"></i>
-                                        <p class="text-start pt-2"><%= thisPlant.lightNotes %></p>
-                                    </div>
+                                
+                                <div class="d-flex align-items-center border-bottom border-primary py-2">
+                                    <i class="bi bi-brightness-high fs-1"></i>
+                                    <p class="text-start pt-2"><%= thisPlant.lightNotes %></p>
+                                </div>
                                     
-                                <div class="d-flex align-items-center">
+                                <div class="d-flex align-items-center py-2">
                                     <span class="material-symbols-outlined fs-1 p-2">skull</span>
                                     <p class="text-start pt-2"><%= thisPlant.toxicityNotes %></p>       
                                 </div>               
@@ -106,9 +107,9 @@
                       
                         <a href="/shop"><button class="m-3 btn btn-success border-2 border-dark">Visit the Shop</button></a>
                     </div>
-                </section>
+                </div>
                 <% } else { %> 
-                    <section class="m-auto text-start" >
+                    <div class="m-auto text-start py-5" >
                         <div class="row align-items-center pb-5">
                             <div class="col-12 col-lg-6">
                                 <h1 class="h-accent">We're Here to Help!</h1>
@@ -124,7 +125,7 @@
                         <div class="row pt-5 text-center">
                             <div class="col">
                                 <h3 class="h-accent">Don't see your plant? No worries!</h3>
-                                <p class="fs-5 m-3">Even if we haven't sold your plant in our stores, our experts can help if you send them a chat.</p>
+                                <p class="fs-5 py-3">Even if we haven't sold your plant in our stores, our experts can help if you send them a chat.</p>
                                 <form class=>
                                     <div class="input-group mb-3 m-auto" style="max-width: 600px">
                                         <input type="text" class="form-control bg-light" placeholder="Email Address" aria-label="Email Address" aria-describedby="button-subscribe">
@@ -136,7 +137,7 @@
                                 </form>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 <% } %> 
             </div>
           
@@ -157,28 +158,32 @@
             <li class="nav-item"><a href="/admin" class="nav-link link-secondary">Admin</a></li>
         </ul>
     </div>
-    <div class="row p-3">
+    <div class="">
         <ul class="list-unstyled d-flex justify-content-center">
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-facebook text-success"></i></a></li>
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-instagram text-success"></i></a></li>
-            <li class="ms-4"><a href="#"><i class="bi bi-small bi-twitter text-success"></i></a></li>
+            <li class=""><a href="#"><i class="bi bi-small bi-facebook text-success"></i></a></li>
+            <li class="mx-4"><a href="#"><i class="bi bi-small bi-instagram text-success"></i></a></li>
+            <li class=""><a href="#"><i class="bi bi-small bi-twitter text-success"></i></a></li>
         </ul>
     </div>
     <hr class="text-secondary">
-    <div class="row p-5 d-flex justify-content-center text-success">
-        <form>
-            <h3 class="text-center pb-4">Subscribe to our Newsletter</h3>
-            <!-- <p>for exciting bi-wekly updates, deals, and plant care tips</p> -->
-            <div class="input-group mb-3 m-auto" style="max-width: 600px">
-                <input type="text" class="form-control bg-light" placeholder="Email Address" aria-label="Email Address" aria-describedby="button-subscribe">
-                <button class="btn btn-success" type="button" id="button-subscribe">Subscribe</button>
-            </div>
-        </form>
-    </div>
-    <div class="py-4">
-        <p class="text-center text-light">© 2023 Pothos, Inc. All rights reserved.</p>
-    </div>
-</footer>
+       
+            <form class="container p-2 text-success">
+                <h3 class="text-center pb-4">Subscribe to our Newsletter</h3>
+                <!-- <p>for exciting bi-wekly updates, deals, and plant care tips</p> -->
+                <div class="row mb-3 d-flex justify-content-center" >
+                    <input type="text" class="col-12 col-md-4 form-control bg-light rounded p-2 text-center" placeholder="Email Address" aria-label="Email Address" aria-describedby="button-subscribe">
+                    
+                    <button class="btn btn-success col-12 col-md-4 my-3 bg-success rounded text-dark text-center ">Subscribe</button>
+                </div>
+            </form>
+    
+        
+        <div class="pt-4 d-flex flex-column justify-content-center  align-items-center">
+            <!-- <p class="text-center text-light">Made By Karissa Lange</p> -->
+            <img class="pb-2" style="width: 3rem" src="/PlantPhotos/pothosLogo.png" >
+            <p class="text-center text-light">© 2023 Pothos, Inc. All rights reserved.</p>
+        </div>
+    </footer>
     
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>    

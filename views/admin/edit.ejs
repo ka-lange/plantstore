@@ -27,20 +27,18 @@
 <body class="main-layout bg-secondary">
     
 
-    <nav id="navbar" class="d-flex justify-content-between align-items-center bg-primary" data-aos="fade-in">
+    <nav id="navbar" class="d-flex flex-column flex-md-row justify-content-between align-items-center bg-primary" data-aos="fade-in">
             
         <a href="/"> <img class="" style="width: 175px" src="../PlantPhotos/pothosHomepageLogo.png"></a>
-        
-        <!-- <div id="logo"><a>POTHOS</a></div> -->
-        <ul class="nav pt-4">
-            <li id="adminAddBtn" class="nav-item"><a href="/admin" class="nav-link link-success">back to admin home</a></li>
-        </ul>
+        <li id="adminAddBtn" class="nav-item"><a href="/admin" class="nav-link link-success">back to admin home</a></li>
+
     </nav>
 
-<section id="activeSection">
+<main id="activeSection" class="pt-5 m-2">
     <p class="text-center fs-4 text-primary h-accent">Active Plants</p>
-    <hr class="w-50 m-auto pb-3">
-        <table class=" table table-secondary ">
+    <hr class="w-50 m-auto">
+    <div class="overflow-x-scroll pb-0">
+        <table class=" table table-secondary m-0">
             <thead>
               <tr>
                 <th scope="col">Plant Names</th>
@@ -118,12 +116,15 @@
               
             </tbody>
           </table>
-</section>
+    </div>
+        
+</main>
 
-<section id="inactiveSection">
+<main id="inactiveSection" class="py-5 m-2">
     <p class="text-center fs-4 text-primary h-accent">Inactive Plants</p>
-    <hr class="w-50 m-auto pb-3">
-        <table class=" table table-secondary ">
+    <hr class="w-50 m-auto">
+    <div class="overflow-x-scroll">
+        <table class=" table table-secondary m-0">
             <thead>
               <tr>
                 <th scope="col">Plant Names</th>
@@ -202,7 +203,8 @@
               
             </tbody>
           </table>
-</section>
+        </div>
+    </main>
 <footer class="container-fluid bg-primary">
     <div class="row p-3">
         <ul class="nav pt-4 d-flex justify-content-center">
