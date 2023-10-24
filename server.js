@@ -14,10 +14,8 @@ const connectDB = async () => {
   }
 
 //page routes
-const homeRoutes = require('./routes/home')
-const aboutRoutes = require('./routes/about')
+const mainRoutes = require('./routes/main')
 const shopRoutes = require('./routes/shop')
-const careRoutes = require('./routes/care')
 const referenceRoutes = require('./routes/reference')
 const adminRoutes = require('./routes/admin')
 const cartRoutes = require('./routes/cart')
@@ -40,10 +38,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
-app.use('/', homeRoutes)
-app.use('/about', aboutRoutes)
+app.use('/', mainRoutes)
 app.use('/shop', shopRoutes)
-app.use('/care', careRoutes)
 app.use('/reference', referenceRoutes)
 app.use('/admin', adminRoutes)
 app.use('/cart', cartRoutes)
