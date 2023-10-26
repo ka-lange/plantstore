@@ -30,7 +30,25 @@
         <script type="text/javascript" src="public/js/main.js"></script> 
     </head>
     <body class="main-layout bg-secondary">
-        <nav class="navbar navbar-expand-md bg-primary py-3">
+        
+        <div class="bg-primary">
+            <% if (currentUser) { %>
+                <div class="d-flex justify-content-end align-items-center pt-1">
+                    <h5 class="text-secondary text-end pe-2">Welcome, <%= currentUser.username %>!</h5>
+                    <h5><a class="text-success pe-2" href="/auth/logout">Logout</a></h5>
+                </div>
+            <% } else { %>
+                <div class="d-flex justify-content-end align-items-center pt-1">
+                    <h5 class="text-secondary text-end pe-2">Welcome, Guest!</h5>
+                    <h5 class="text-success pe-2" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#loginModal">Login</h5>
+                        <!-- Button trigger modal -->
+
+                    <h5 class="text-secondary">or </h5>
+                    <h5 class="text-success px-2 " style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#registerModal">Register Here</h5>
+                </div>
+            <% } %>
+            
+        <nav class="navbar navbar-expand-md bg-primary pb-2">
             <div class="container-fluid">
                 <a class="navbar-brand " href="/"><img class="" style="width: 175px" src="PlantPhotos/pothosHomepageLogo.png" alt="Pothos plant store logo"></a>
                 <button class="navbar-toggler bg-success mt-4" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,8 +64,7 @@
                                     <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/"><%= navlink %></a></li>
                                 <% } else {%>
                                     <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/<%= navlink %>"><%= navlink %></a></li>
-                                <% } %>
-                                        
+                                <% } %>  
                             <% } else { %>
                                 <% if (navlink == "Home") {%>
                                     <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/"><%= navlink %></a></li>
@@ -60,13 +77,106 @@
                         <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/about">About</a></li>
                         <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/shop">Shop</a></li>
                         <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/care">Care</a></li> -->
-                        <li class="nav-item" ><a class="nav-link" href="/auth"><i class="bi bi-person-circle bi-small text-success"></i></a></li>
+                        <!-- <div class="dropdown-center">
+                            <li class="nav-item dropdown-toggle" type="button" data-bs-toggle="dropdown" ><a class="nav-link" href="/auth"><i class="bi bi-person-circle bi-small text-success"></i></a></li>
+                        <div class="dropdown-menu bg-secondary p-4">
+                            <h2>Hi</h2>
+                            <button class="btn btn-primary">login</button>
+                            <button class="btn btn-primary">register</button>
+                           
+                        </div>
+                      </div> -->
+                        <!-- <li class="nav-item" ><a class="nav-link" href="/auth"><i class="bi bi-person-circle bi-small text-success"></i></a></li>  -->
                         <li class="nav-item" ><a class="nav-link" href="/cart"><i class="bi bi-cart2 bi-small text-success"></i></a></li> 
                         <!-- <li class="nav-item" ><button class="nav-link" href="auth/logout"><i class="bi bi-box-arrow-right bi-small text-success"></i></button></li> -->
+                        
                     </ul>
                 </div>
             </div>
         </nav>
-        <% if (currentUser) { %>
-            <h6>Welcome, <%= currentUser.username %></h6>  
-        <% } %>
+    </div>
+
+
+
+  
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="login modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="loginModalLabel">Login Existing User</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                  <form class="d-flex flex-column justify-content-center" action="auth/login" method="POST">
+                      <div class="mb-3">
+                          <label for="username" class="form-label">Username</label>
+                          <input
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          name="username"
+                          required
+                          />
+                      </div>
+                      <div class="mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          name="password"
+                          required
+                          />
+                      </div>
+                      <button type="submit" class="btn btn-primary">Login</button>
+                  </form>
+        </div>
+        <div class="modal-footer">
+          <h5>Don't have an account? <h5 class="text-success pe-2" data-bs-toggle="modal" data-bs-target="#registerModal">Register Here</h5></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="register modal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content ">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="registerModalLabel">Register New User</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="d-flex flex-column justify-content-center" action="auth/register" method="POST">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        required
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        required
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <h5>Already have an account? <h5 class="text-success pe-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login Here</h5></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  

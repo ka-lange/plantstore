@@ -50,13 +50,13 @@ function getTotal(){
 
 
 
-async function addToCart(plantId){
+async function addToCart(plantId, commonName){
     try{
-        const response = await fetch('shop/addToCart', {
-            method: 'put',
+        const response = await fetch('cart/addToCart', {
+            method: 'post',
             headers: {'Content-type': 'application/json'},
             body: JSON.stringify({
-                'plantIdFromJSFile': plantId
+                'plantIdFromJSFile': plantId,
             })
         })
         const data = await response.json()
