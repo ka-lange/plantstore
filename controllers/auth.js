@@ -2,7 +2,7 @@ const passport = require('passport')
 const User = require('../models/User')
 
 const getAuth = (req, res) => {
-    res.render('auth')
+    res.render('auth', {page_name:'auth'})
 }
 
 const loginUser = passport.authenticate('local', {

@@ -38,10 +38,28 @@
                 </button>
                 <div class=" collapse navbar-collapse mt-3" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto text-center">
-                        <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/">Home</a></li>
+                        <% const navItems = ["Home", "About", "Shop", "Care"] %>
+                        
+                        <% navItems.forEach(navlink => { %>
+                            <% if(navlink == page_name) { %>
+                                <% if (navlink == "Home") {%>
+                                    <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/"><%= navlink %></a></li>
+                                <% } else {%>
+                                    <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/<%= navlink %>"><%= navlink %></a></li>
+                                <% } %>
+                                        
+                            <% } else { %>
+                                <% if (navlink == "Home") {%>
+                                    <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/"><%= navlink %></a></li>
+                                <% } else {%>
+                                    <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/<%= navlink %>"><%= navlink %></a></li>
+                                <% } %>
+                            <% } %>
+                        <% }) %>
+                        <!-- <li class="nav-item"><a class="nav-link nav-link-active fs-4" href="/">Home</a></li>
                         <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/about">About</a></li>
                         <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/shop">Shop</a></li>
-                        <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/care">Care</a></li>
+                        <li class="nav-item"><a class="nav-link link-secondary fs-4" href="/care">Care</a></li> -->
                         <li class="nav-item" ><a class="nav-link" href="/auth"><i class="bi bi-person-circle bi-small text-success"></i></a></li>
                         <li class="nav-item" ><a class="nav-link" href="/cart"><i class="bi bi-cart2 bi-small text-success"></i></a></li> 
                         <!-- <li class="nav-item" ><button class="nav-link" href="auth/logout"><i class="bi bi-box-arrow-right bi-small text-success"></i></button></li> -->

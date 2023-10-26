@@ -6,7 +6,7 @@ module.exports = {
             const Plants = await Plant.find()//uses variable Todo model to grab todo instances from database, mongoose automatically turns to array
             // const itemsLeft = await Todo.countDocuments({completed: false})
             
-            res.render('cart.ejs', {plants: Plants})
+            res.render('cart.ejs', {plants: Plants, page_name:'cart'})
 
         }catch(err){
             console.log(err)
