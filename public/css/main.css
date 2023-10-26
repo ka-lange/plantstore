@@ -41,9 +41,9 @@ body{
 }
 
 /* NAVBAR */
-    #navbar {
-        padding: 20px 30px;
-    }
+    /* #navbar {
+        padding: 10px 10px;
+    } */
    
     .nav-link, #logo {
         cursor: pointer;

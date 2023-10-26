@@ -15,6 +15,6 @@ router.get('/filterPothos', shopController.filterPothos)
 router.get('/filterPhilos', shopController.filterPhilos)
 router.get('/filterOthers', shopController.filterOthers)
 
-router.put('/addToCart', shopController.addToCart)
+// router.put('/addToCart', shopController.addToCart)
 
 module.exports = router
