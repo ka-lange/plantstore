@@ -106,6 +106,12 @@ i{
     object-fit: cover;
 }
 
+.icon-rotate:hover{
+    transform: rotate(-10deg);
+}
+.icon-grow:hover{
+    transform: scale(1.1);
+}
 
 
 /* SHOP */
